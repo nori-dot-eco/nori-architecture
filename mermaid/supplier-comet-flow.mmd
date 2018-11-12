@@ -1,0 +1,67 @@
+sequenceDiagram
+
+    Participant s as Supplier
+    Participant n as nori-website
+    Participant ns as nori-sendgrid
+    Participant c as COMET
+    Participant ds as DataStore
+    Participant bq as BigQuery
+    Participant gcs as CloudStorage
+
+    # supplier registration
+    s->>n: sign up as supplier
+    n->>ds: register supplier + project
+
+    # input project data
+    s->>n: Input data in react sheet
+
+    # submit project data to various sources
+    s->>n: click submit(projectID)
+    par submit input data
+      n->>bq: submit input data to BQ in nori-website.projectId.input-timestamp
+      n->>ns: add to queue
+    end
+    # COMET queue process
+    ns->>ns: waits in queue
+    ns->>ns: execute queue
+    ns->>c: POST to API
+    c->>c: generate baseline
+    c->>ns: send email
+    ns->>ns: parse email as baseline
+    par store baseline
+      ns->>gcs: add raw xml to CloudStorage as comet/baseline/supplierId/projectId/baseline-timestamp
+      ns->>ds: add baseline of model to DataStore (associate with projectId)
+      ns->>bq: add rest of model run to bq in nori-website.projectId.baseline-parcelId-timestamp
+    end
+
+    # supplier baseline and score review
+    s->>n: navigate baseline/score review
+    n->>ds: get baseline using projectId
+    ds->>n: return baseline
+    n->>n: transform baseline into score
+    n->>s:display score in UI
+
+    # optional supplier detailed score and baseline information
+    s->>n: request detailed baseline model run for parcels
+    n->>bq: get baseline model run for parcels using projectId
+    bq->>n: transform bq to csv and/or UI
+    n->>s: download/UI with model run
+
+    # supplier score confirmation
+    s->>n: confirm score
+    n->>ds: commit score to projectId
+
+    # supplier project page
+    s->>n: navigate to supplier project page
+    n->>ds: get baseline and score using projectId
+    ds->>n: return baseline and score
+    n->>n: transform to UI
+    n->>s:show score and verification info
+
+
+
+
+
+
+
+

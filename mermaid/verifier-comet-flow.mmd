@@ -1,0 +1,50 @@
+sequenceDiagram
+
+    Participant s as Supplier
+    Participant v as Verifier
+    Participant n as nori-website
+    Participant ns as nori-sendgrid
+    Participant c as COMET
+    Participant ds as DataStore
+    Participant bq as BigQuery
+
+    # assign and notify berifier
+    s->>n: assign Verifier
+    n->>v: notify Verifier
+
+    # verifier project page flow
+    v->>n: navigate to verifer project page
+    n->>ds: get baseline and score using projectId
+    ds->>n: return baseline+score
+    n->>bq: get baseline input data
+    bq->>n: return input data
+    n->>n: transform score+output+input to UI
+    n->>v:display verification UI
+
+    # optional: request more data for verification
+    v->>n:request detailed baseline model return
+    n->>bq:fetch detailed baseline runs from bq
+    bq->>n:return  detailed baseline model
+    n->>v:display details
+
+    # verification process
+    v->>n: verify each bucket
+    n->>n:calculate score
+    n->>ds: commit raw verification + calculated score for projectId
+    ds->>n:confirmation of submission
+    n->>s: notify supplier
+
+    # supplier post-verification flow
+    s->>n: naviage to supplier project page
+    n->>ds: fetch verification + score for projectId
+    ds->>n:return data
+    n->>n:transform for UI
+    n->>s: display score + verification breakdown
+
+
+
+
+
+
+
+

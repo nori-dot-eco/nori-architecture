@@ -1,0 +1,8 @@
+{
+  "startOnLoad": true,
+  "sequence": {
+    "mirrorActors": true,
+    "bottomMarginAdj": 1
+  },
+  "themeCSS": ".labelBox, .note {font-size:12px;font-family:'ITC Avant Garde Gothic LT', 'Helvetica', 'Arial', sans-serif;fill:#FB6E2C; stroke:#FB6E2C;} .actor-line, .messageLine0, .messageLine1 {font-size:12px;fill: #318295;stroke:#318295;} .messageText, .labelText, .loopText {font-size:12px;font-family:'ITC Avant Garde Gothic LT', 'Helvetica', 'Arial', sans-serif;color: #1D2628;} .actor {font-family:'ITC Avant Garde Gothic LT', 'Helvetica', 'Arial', sans-serif;fill: #318295;; stroke: #318295;} "
+}

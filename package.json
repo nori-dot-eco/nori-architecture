@@ -1,0 +1,14 @@
+{
+  "name": "nori-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mermaid.cli": "^0.5.1"
+  }
+}
