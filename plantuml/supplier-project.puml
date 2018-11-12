@@ -1,0 +1,37 @@
+@startuml
+
+hide circle
+hide methods
+
+package GCP <<Cloud>> {
+  package BigQuery <<Rectangle>> {
+    package nori-website-prod <<Folder>> {
+      package noriProjectId <<Folder>> {
+        package BASELINE_PARCEL_BASIC_CID <<Database>> {
+        }
+        package BASELINE_PARCEL_DETAILED_CID <<Database>> {
+        }
+        package BASELINE_INPUT_CID <<Database>> {
+        }
+      }
+    }
+  }
+
+  package DataStore <<Rectangle>> {
+    class SupplierProfile
+    class SupplierProject {
+      -baselineInputCID
+      -detailedBaselineCID
+      -basicBaselineCID
+    }
+    class CRCData
+  }
+}
+
+SupplierProfile o-- "0..*" SupplierProject : supplierProfileKey
+SupplierProject o-- "1" CRCData : noriProjectId
+SupplierProject .. BASELINE_PARCEL_BASIC_CID : basicBaselineCID
+SupplierProject .. BASELINE_INPUT_CID : baselineInputCID
+SupplierProject .. BASELINE_PARCEL_DETAILED_CID : detailedBaselineCID
+
+@enduml

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mermaid.cli": "^0.5.1"
+    "mermaid.cli": "^0.5.1",
+    "node-plantuml": "^0.7.0"
   }
 }
