@@ -4,6 +4,9 @@
 
 This repository uses [mermaid](https://mermaidjs.github.io/demos.html) and [plant uml](http://plantuml.com/class-diagram) to assist in the ideation and creation of architecture architecture artifacts (such as sequence diagrams, UML, flow charts, gantt charts, etc)
 
+- Generated diagrams can be found [here (PNGs)](https://github.com/nori-dot-eco/nori-architecture/tree/master/diagrams)
+- Diagrams input specifications can be found [here (Mermaid format)](https://github.com/nori-dot-eco/nori-architecture/tree/master/mermaid) and [here (PlantUML format)](https://github.com/nori-dot-eco/nori-architecture/tree/master/plantuml)
+
 ## Mermaid
 
 Mermaid is best used for sequence diagrams and flow charts
