@@ -28,6 +28,8 @@ sequenceDiagram
 
 In VSCode, you can use [mermaid preview](https://github.com/vstirbu/vscode-mermaid-preview) to review the diagram changes in real-time
 
+Or [do it live here](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
+
 ### Create the diagram image
 
 ```bash
@@ -47,6 +49,8 @@ See [here](http://plantuml.com/sitemap-language-specification) for language spec
 ### Preview the diagram
 
 You can use [vscode-plantuml](https://github.com/qjebbs/vscode-plantuml) to review the diagram changes in real-time
+
+Or [do it live here](https://www.planttext.com/)
 
 ### Create the diagram image
 
