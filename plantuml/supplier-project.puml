@@ -7,8 +7,8 @@ package GCP <<Cloud>> {
   package BigQuery <<Rectangle>> {
     package nori-website-prod <<Folder>> {
       package noriProjectId <<Folder>> {
-        package BASELINE_PARCEL_BASIC_CID <<Database>> {
-          class baseline {
+        package output <<Rectangle>> {
+          class basicBaselineCID {
             -timestamp
             -BiomassBurningCH4Uncertainty
             -BiomassBurningCH4
@@ -39,17 +39,69 @@ package GCP <<Cloud>> {
             -DrainedOrganicSoilsN2OUncertainty
           }
 
-        }
-        package BASELINE_PARCEL_DETAILED_CID <<Database>> {
-          class parcel_detailed {
+          note right of basicBaselineCID
+            <b>Implementation status:</b> mostly implemented,
+            but input welcome
+
+            <b>Primary user:</b> supplier and verifier
+
+            <b>Nori uses this for:</b>
+            - generating a project + crc score
+            - generating a basic verification info
+
+            <b>about this data:</b>
+            The data in this table should be the main (only?) data
+            a verifier is concerned with. It is also likely the only
+            thing we will consider when \ngenerating a score
+
+            This could very well be stored in DS for indexing
+          end note
+
+          class detailedBaselineCID {
             -activity
             -value
             -timestamp
           }
+
+          note left of detailedBaselineCID
+            <b>Implementation status:</b> implemented
+
+            <b>Primary user:</b> verifier
+            <b>Secondary user:</b> supplier
+
+            <b>Nori uses this for:</b>
+            - generating a verifier report
+            - generating a project + crc score (unknown)
+
+            <b>about this data:</b>
+            There are <b>1,484</b> possible "activity" values
+            (see the document called "(COMET) Key/value
+            glossary for API" in google drive). Each
+            value contains highly detailed information
+            relating to how the baseline was calculated.
+            It is most likely the case that this information
+            is relevant to how the baseline was generated,
+            but most likely not relevant to any verifier
+            or supplier.
+
+            <b>Implementation use notes:</b>
+            Richie and I are currently assuming that this
+            information will be available "as requested", and
+            will either be rendered as a csv download,
+            or in a basic table for this stage of development.
+
+            <b>Storage location justification:</b>
+            - It would be unrealistic to put these into datastore.
+          end note
+
+          note as output_note
+            this is the output data
+            from the COMET api
+          end note
         }
 
-        package BASELINE_INPUT_CURRENT_CID <<Database>> {
-          class current_input {
+        package input <<Rectangle>> {
+          class baselineInputCurrentCID {
             -cropNumber
             -cropName
             -plantingDate
@@ -67,10 +119,7 @@ package GCP <<Cloud>> {
             -eep
           }
 
-        }
-
-        package BASELINE_INPUT_CONVERSION_CID <<Database>> {
-          class conversion_input {
+          class baselineInputConversionCID {
             -cropNumber
             -cropName
             -plantingDate
@@ -87,59 +136,50 @@ package GCP <<Cloud>> {
             -nApplicationMethod
             -eep
           }
+          note as input_note
+            <b>Implementation status:</b> mostly
+            implemented
 
+            <b>Primary user:</b>Supplier
+            <b>Secondary user:</b>Verifier
+
+            <b>Nori uses this for:</b>Storing
+            Supplier input data in a format
+            that is 1) easy for a verifier
+            to download as a CSV for verifier
+            or supplier 2) to generate a COMET XML
+            API input file (note this is an artifact
+            of generation, and the BigQuery format is
+            not used firectly to call COMET) and 3)
+            to retrieve and update supplier project data
+
+
+            <b>About this data:</b>
+            this is the input data
+            for the COMET api
+            (excluding those listed
+            in text_input).
+
+            <b>Additional notes:</b>
+            - Currently baselineInputCurrentCID
+            and baselineInputConversionCID
+            are combined in a single input
+            table.
+            <b>Storage location justification</b>
+            - this format is highly compatible
+            with a sheets formatted input componet
+            as well as a CSV download component
+          end note
         }
-
       }
-
     }
-
   }
 
-  note bottom of baseline
-    The data in this table should be the main (only?) data
-    a verifier is concerned with. It is also likely the only
-    thing we will consider when \ngenerating a score
-
-    This could very well be stored in DS for indexing
-  end note
-
-  note as pd1
-    <b>Implementation status:</b> implemented
-
-    <b>Primary user:</b> verifier
-    <b>Secondary user:</b> supplier
-
-    <b>Nori uses this for:</b>
-    - generating a verifier report
-
-    <b>about this data:</b>
-    There are <b>1,484</b> possible "activity" values
-    (see the document called "(COMET) Key/value
-    glossary for API" in google drive). Each
-    value contains highly detailed information
-    relating to how the baseline was calculated.
-    It is most likely the case that this information
-    is relevant to how the baseline was generated,
-    but most likely not relevant to any verifier
-    or supplier.
-
-    <b>Implementation use notes:</b>
-    Richie and I are currently assuming that this
-    information will be available "as requested", and
-    will either be rendered as a csv download,
-    or in a basic table for this stage of development.
-
-    <b>Storage location justification:</b>
-    - It would be unrealistic to put these into datastore.
-  end note
-
-  parcel_detailed .. pd1
-
   package DataStore <<Rectangle>> {
+    class CRCData
     class SupplierProfile
     class SupplierProject {
-      Single input requirements:
+      -score
       -baselineInputCID
       -baselineInputCurrentCID
       -baselineInputConversionCID
@@ -154,40 +194,195 @@ package GCP <<Cloud>> {
       -Year1980-2000
       -Year2980-2000_Tillage
     }
-    class CRCData
+    note right of SupplierProject
+      <b>Implementation status:</b> mostly
+      unimplemented
+
+      it's quite possible a lot of this
+      information is best broken
+      into a "baseline + score"
+      entity
+    end note
   }
-
-  package /app/supplier/setup-your-project <<Rectangle>> {
-
-    package form <<Rectangle>> {
+}
 
 
-      package sheet <<Rectangle>> {
-
-      }
-      package text_input <<Rectangle>> {
-        note as ti1
-          -GEOM
-          -Pre-1980
-          -CRP
-          -CRPType
-          -CRPStartYear
-          -CRPEndYear
-          -Year1980-2000
-          -Year2980-2000_Tillage
-        end note
-      }
+package /app/supplier/project-page/noriProjectId <<Rectangle>> {
+  package Supplier_Project_view <<Rectangle>> {
+    package baseline_score <<Rectangle>> {
+      note as score1
+        This is <b>calculated</b> using
+        basicBaselineCID
+      end note
+    }
+    package baseline_basic_report <<Rectangle>> {
+      note as bb1
+        A basic report contains data from
+        basicBaselineCID
+      end note
     }
   }
 }
 
-SupplierProfile o-- "0..*" SupplierProject : supplierProfileKey
-SupplierProject o-- "1" CRCData : noriProjectId
-SupplierProject .. BASELINE_PARCEL_BASIC_CID : basicBaselineCID
-SupplierProject .. BASELINE_INPUT_CURRENT_CID : baselineInputCurrentCID
-SupplierProject .. BASELINE_INPUT_CONVERSION_CID : baselineInputConversionCID
-SupplierProject .. BASELINE_PARCEL_DETAILED_CID : detailedBaselineCID
+package /app/verifier/verifier-page/noriProjectId <<Rectangle>> {
+  package Verifier_Project_view <<Rectangle>> {
+    package baseline_verification <<Rectangle>> {
+      note as bv1
+        This would contain inputs to apply
+        a score to a SupplierProject
+      end note
+    }
+    package baseline_detailed <<Rectangle>> {
+      note as bd1
+        Although we know all the data that exists
+        here, it is still unknown how useful it is
+        to display to either the supplier or verifier.
+        That said it can be easily pulled into a CSV
+        report from BigQuery
+      end note
+    }
+    package supplier_baseline_input <<Rectangle>> {
+      note as bi1
+        This is the data input by the
+        supplier in the text_input
+        and sheet form.
+      end note
+    }
 
+    package baseline_basic_report_verification <<Rectangle>> {
+      note as bbrv1
+        A basic report contains data from
+        basicBaselineCID
+      end note
+    }
+  }
+}
+
+package /app/supplier/setup-your-project <<Rectangle>> {
+  package form <<Rectangle>> {
+    package sheet <<Rectangle>> {
+      class sheet_data {
+        -cropNumber
+        -cropName
+        -plantingDate
+        -continueFromPreviousYear
+        -harvestDate
+        -grain
+        -yield
+        -strawStoverHayRemoval
+        -tillageDate
+        -tillageType
+        -nApplicationDate
+        -nApplicationType
+        -nApplicationAmount
+        -nApplicationMethod
+        -eep
+      }
+      note left of sheet_data
+        <b>Implementation status:</b> mostly
+        implemented
+
+        <b>Primary user:</b> supplier
+        <b>Secondary user:</b> verifier
+        (in verifier's project page as
+        a verification review artifact)
+
+        <b>Nori uses this for:</b>
+        - generating a COMET API input file.
+        We currently extep text input in a sheet
+        which is transformed from a format of
+        [[],[]...] and then flattened and
+        inserted into BigQuery in CSV format
+        and transformed into XML format for
+        the COMET API
+
+        <b>Storage location</b>: BigQuery
+        <b>Storage location justification:</b>
+        It seems gratuitous to store in datastore. since
+        all of the sheet_data is repeated 26x
+
+        <b>Additional notes:</b> it turns out to be quite
+        easy to transform data from [[],...] to CSV format for
+        BigQuery inserting, and also easy to normalize into
+        JSON (which can the be structured such that it can be
+        easily converted to XML). Little other thought has
+        been given into normalizing input data.
+        end
+
+      end note
+    }
+
+    package text_input <<Rectangle>> {
+      class text_input_data {
+        -GEOM
+        -Pre-1980
+        -CRP
+        -CRPType
+        -CRPStartYear
+        -CRPEndYear
+        -Year1980-2000
+        -Year2980-2000_Tillage
+      }
+      note left of text_input_data
+        <b>Implementation status:</b> not
+        implemented
+
+        <b>Primary user:</b> supplier
+        <b>Secondary user:</b> verifier
+        (in verifier's project page as
+        a verification review artifact)
+
+        <b>Nori uses this for:</b>Basic
+        supplierProject description
+
+        <b>Additional notes</b>
+        These are input one time
+
+        <b>Storage location</b>: DataStore
+        <b>Storage location justification:</b>
+        This data is input once per project and
+        therefore makes sense to just add
+        directly to the supplierProject ent
+      end note
+    }
+  }
+}
+
+sheet .. baselineInputCurrentCID
+sheet .. baselineInputConversionCID
+text_input .left. SupplierProject
+
+SupplierProfile o-- SupplierProject : supplierProfileKey
+SupplierProject o-left- CRCData : noriProjectId
+SupplierProject .. basicBaselineCID
+SupplierProject .. baselineInputCurrentCID
+SupplierProject .. baselineInputConversionCID
+SupplierProject .. detailedBaselineCID
+baseline_basic_report .. SupplierProject : basicBaslineCID
+baseline_basic_report_verification .. SupplierProject : basicBaslineCID
+baseline_score .. SupplierProject
+supplier_baseline_input .. SupplierProject : baselineInputCID
+baseline_detailed .. SupplierProject : detailedBaslineCID
+baseline_verification .. SupplierProject
+
+note as bi2
+  This data can be easily pulled directly
+  from baselineInputCurrentCID
+  and baselineInputConversionCID
+
+  BigQuery allows us to very easily
+  pull this data in either a sheets format
+  or a downloadable CSV (extremly low
+  overhead)
+
+  This is the only data we currently know of
+  that can/will be transformed from an
+  external datasource such as granular
+end note
+
+
+
+bi1 -- bi2
 
 
 @enduml
