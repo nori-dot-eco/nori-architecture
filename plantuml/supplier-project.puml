@@ -8,30 +8,186 @@ package GCP <<Cloud>> {
     package nori-website-prod <<Folder>> {
       package noriProjectId <<Folder>> {
         package BASELINE_PARCEL_BASIC_CID <<Database>> {
+          class baseline {
+            -timestamp
+            -BiomassBurningCH4Uncertainty
+            -BiomassBurningCH4
+            -WetlandRiceCultivationCH4Uncertainty
+            -WetlandRiceCultivationCH4
+            -SoilCH4Uncertainty
+            -LimingCO2Uncertainty
+            -SoilCarbonStockEnd
+            -LimingCO2
+            -UreaFertilizationCO2Uncertainty
+            -SoilCH4
+            -SoilCarbonStock2000
+            -SoilCarbonUncertainty
+            -UreaFertilizationCO2
+            -SoilCarbon
+            -DrainedOrganicSoilsCO2
+            -SoilN2OUncertainty
+            -BiomassBurningCarbonUncertainty
+            -WetlandRiceCultivationN2OUncertainty
+            -SoilCarbonStockBegin
+            -DrainedOrganicSoilsN2O
+            -SoilN2O
+            -BiomassBurningCarbon
+            -WetlandRiceCultivationN2O
+            -DrainedOrganicSoilsCO2Uncertainty
+            -BiomassBurningN2O
+            -BiomassBurningN2OUncertainty
+            -DrainedOrganicSoilsN2OUncertainty
+          }
+
         }
         package BASELINE_PARCEL_DETAILED_CID <<Database>> {
+          class parcel_detailed {
+            -activity
+            -value
+            -timestamp
+          }
         }
-        package BASELINE_INPUT_CID <<Database>> {
+
+        package BASELINE_INPUT_CURRENT_CID <<Database>> {
+          class current_input {
+            -cropNumber
+            -cropName
+            -plantingDate
+            -continueFromPreviousYear
+            -harvestDate
+            -grain
+            -yield
+            -strawStoverHayRemoval
+            -tillageDate
+            -tillageType
+            -nApplicationDate
+            -nApplicationType
+            -nApplicationAmount
+            -nApplicationMethod
+            -eep
+          }
+
         }
+
+        package BASELINE_INPUT_CONVERSION_CID <<Database>> {
+          class conversion_input {
+            -cropNumber
+            -cropName
+            -plantingDate
+            -continueFromPreviousYear
+            -harvestDate
+            -grain
+            -yield
+            -strawStoverHayRemoval
+            -tillageDate
+            -tillageType
+            -nApplicationDate
+            -nApplicationType
+            -nApplicationAmount
+            -nApplicationMethod
+            -eep
+          }
+
+        }
+
       }
+
     }
+
   }
+
+  note bottom of baseline
+    The data in this table should be the main (only?) data
+    a verifier is concerned with. It is also likely the only
+    thing we will consider when \ngenerating a score
+
+    This could very well be stored in DS for indexing
+  end note
+
+  note as pd1
+    <b>Implementation status:</b> implemented
+
+    <b>Primary user:</b> verifier
+    <b>Secondary user:</b> supplier
+
+    <b>Nori uses this for:</b>
+    - generating a verifier report
+
+    <b>about this data:</b>
+    There are <b>1,484</b> possible "activity" values
+    (see the document called "(COMET) Key/value
+    glossary for API" in google drive). Each
+    value contains highly detailed information
+    relating to how the baseline was calculated.
+    It is most likely the case that this information
+    is relevant to how the baseline was generated,
+    but most likely not relevant to any verifier
+    or supplier.
+
+    <b>Implementation use notes:</b>
+    Richie and I are currently assuming that this
+    information will be available "as requested", and
+    will either be rendered as a csv download,
+    or in a basic table for this stage of development.
+
+    <b>Storage location justification:</b>
+    - It would be unrealistic to put these into datastore.
+  end note
+
+  parcel_detailed .. pd1
 
   package DataStore <<Rectangle>> {
     class SupplierProfile
     class SupplierProject {
+      Single input requirements:
       -baselineInputCID
+      -baselineInputCurrentCID
+      -baselineInputConversionCID
       -detailedBaselineCID
       -basicBaselineCID
+      -GEOM
+      -Pre-1980
+      -CRP
+      -CRPType
+      -CRPStartYear
+      -CRPEndYear
+      -Year1980-2000
+      -Year2980-2000_Tillage
     }
     class CRCData
+  }
+
+  package /app/supplier/setup-your-project <<Rectangle>> {
+
+    package form <<Rectangle>> {
+
+
+      package sheet <<Rectangle>> {
+
+      }
+      package text_input <<Rectangle>> {
+        note as ti1
+          -GEOM
+          -Pre-1980
+          -CRP
+          -CRPType
+          -CRPStartYear
+          -CRPEndYear
+          -Year1980-2000
+          -Year2980-2000_Tillage
+        end note
+      }
+    }
   }
 }
 
 SupplierProfile o-- "0..*" SupplierProject : supplierProfileKey
 SupplierProject o-- "1" CRCData : noriProjectId
 SupplierProject .. BASELINE_PARCEL_BASIC_CID : basicBaselineCID
-SupplierProject .. BASELINE_INPUT_CID : baselineInputCID
+SupplierProject .. BASELINE_INPUT_CURRENT_CID : baselineInputCurrentCID
+SupplierProject .. BASELINE_INPUT_CONVERSION_CID : baselineInputConversionCID
 SupplierProject .. BASELINE_PARCEL_DETAILED_CID : detailedBaselineCID
+
+
 
 @enduml
