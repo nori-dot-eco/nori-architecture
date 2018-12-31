@@ -255,10 +255,51 @@ package "/app/supplier/project-page?projectId=supplierProjectKey" <<Rectangle>> 
     }
 
     package "Baseline Report" <<Rectangle>> {
-      note as baselineReportNote
-        This is <b>calculated</b> using
-        the select CometScenario
-      end note
+
+
+      package "Projection Review" <<Rectangle>> {
+        package "Scenario Selection" <<Rectangle>> {
+          note as scenarioSelectionNote
+            We will need a way to calculate
+            a score as well as to store
+            the selected scenario in
+            CRCData
+          end note
+        }
+
+        package "Details" <<Rectangle>> {
+          note as detailsNote
+            This is a view of the
+            data in the API output
+            contained in BigQuery
+          end note
+        }
+
+        package "Difference" <<Rectangle>> {
+          note as differenceNote
+            This is calculated
+            by finding the difference
+            between baseline and
+            conservation scenarios
+          end note
+        }
+
+        package "Conservation Scenario" <<Rectangle>> {
+          note as conservationScenarioNote
+            This contains data from
+            CometScenario where
+            type = Conservation
+          end note
+        }
+
+        package "Baseline Scenario" <<Rectangle>> {
+          note as baselineScenarioNote
+            This contains data from
+            CometScenario where
+            type = Baseline
+          end note
+        }
+      }
     }
   }
 }
@@ -362,9 +403,10 @@ SupplierProject o-left- Contact : supplierProjectKey
 SupplierProject .. "Dataset: supplierProjectKey"
 Ownership .. Contact
 "Baseline Report" .. CometScenario
-"Baseline Report" .. "Comet API output data"
 ProjectSheet .. SupplierProject
 "Land Management" .. "Table: Parcel_ParcelName"
 "Land Management" .. ProjectSheet
+"Scenario Selection" .. CRCData
+"Details" .. "Comet API output data"
 
 @enduml
