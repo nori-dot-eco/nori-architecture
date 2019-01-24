@@ -21,7 +21,7 @@ fs.readdir(mermaidInput, function(err, files) {
     const toPath = path.join(diagramOutput, `${fileName}${fileExt}`);
     const fromPath = path.join(mermaidInput, file);
     const mmdc = execSync(
-      `./node_modules/.bin/mmdc -c ${config} -b ${bg} -i ${fromPath} -o ${toPath} -w 3068 -H 2304`,
+      `./node_modules/.bin/mmdc -c ${config} -b ${bg} -i ${fromPath} -o ${toPath} -w 4096 -H 2304`,
       (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);

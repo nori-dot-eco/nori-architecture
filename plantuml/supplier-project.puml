@@ -3,23 +3,22 @@
 hide circle
 hide methods
 
-package "Google Sheets" <<Cloud>> {
-  class "ProjectSheet" {
-    -cropNumber
-    -cropName
-    -plantingDate
-    -continueFromPreviousYear
-    -harvestDate
-    -grain
-    -yield
-    -strawStoverHayRemoval
-    -tillageDate
-    -tillageType
-    -nApplicationDate
-    -nApplicationType
-    -nApplicationAmount
-    -nApplicationMethod
-    -eep
+package "Google Drive\n" <<Cloud>> {
+  package "Google Sheets" <<Rectangle>> {
+    class "ProjectSheet" {
+      -sheetId
+      -WKT
+      -totalAcres
+      -regenAdoptionYear
+      -pre2000Management
+      -pre2000Tillage
+      -pre1980Management
+      -pre2000CRP
+      -CRPStartYear
+      -CRPEndYear
+      -CRPType
+      -...cropYears
+    }
   }
 }
 
@@ -27,138 +26,71 @@ package GCP <<Cloud>> {
   package BigQuery <<Rectangle>> {
     package "Project: nori-website-prod" <<Folder>> {
       package "Dataset: supplierProjectKey" <<Folder>> {
-        class "Table: Parcel_ParcelName" {
-          -Number
-          -Lat
-          -Long
+        class "Table: SupplierProjectFieldSetId" {
+          -GeoJSON
+          +label: fieldSet
+          +name: fieldSetName
         }
-        note left of "Table: Parcel_ParcelName"
+
+        note left of "Table: SupplierProjectFieldSetId"
           <b>Primary user:</b>Supplier
           <b>Secondary user:</b>Verifier
 
           <b>About this data:</b>
           Geographic data for a
-          supplier's parcel. Used
+          supplier's field set. Used
           to generate a map view.
-          We will need tofigure out
-          how to calculate the WKT
-          from this to use COMET's
-          API
         end note
-
-        package "Comet API output data" <<Rectangle>> {
-          class "Table: conservationScenarioDetails_mapUnit#" {
-            -activity
-            -value
-            -timestamp
-          }
-          note right of "Table: conservationScenarioDetails_mapUnit#"
-            These are details about
-            a supplier's projected
-            scenario for if the
-            supplier changes practices
-            as defined in the API input
-          end note
-
-          class "Table: baselineScenarioDetails_mapUnit#" {
-            -activity
-            -value
-            -timestamp
-          }
-          note left of "Table: baselineScenarioDetails_mapUnit#"
-            These are details about
-            a supplier's projected
-            scenario for if the
-            supplier continued
-            practices no different
-            than historically
-            specified
-          end note
-
-          class "Table: historicDetails_mapUnit#" {
-            -activity
-            -value
-            -timestamp
-          }
-          note right of "Table: historicDetails_mapUnit#"
-            These are details about
-            a supplier's historic
-            practices
-          end note
-
-          note as scenarioDetails
-            <b>Primary user:</b> Unknown
-
-            <b>Nori uses this for:</b>
-            - Displaying detailed information
-            about what went into calculating
-            a supplier's scenario projections
-            in the "Baseline Report" tab
-
-            <b>About this data:</b>
-            There are <b>1,484</b> possible "activity" values
-            (see the document called "(COMET) Key/value
-            glossary for API" in google drive). Each
-            value contains highly detailed information
-            relating to how the baseline was calculated.
-          end note
-        }
-
-        package "Comet API input data" <<Rectangle>> {
-          class cometInput {
-            -cropNumber
-            -cropName
-            -plantingDate
-            -continueFromPreviousYear
-            -harvestDate
-            -grain
-            -yield
-            -strawStoverHayRemoval
-            -tillageDate
-            -tillageType
-            -nApplicationDate
-            -nApplicationType
-            -nApplicationAmount
-            -nApplicationMethod
-            -eep
-          }
-          note right of cometInput
-            <b>Primary user:</b>Supplier
-            <b>Secondary user:</b>Verifier
-
-            <b>About this data:</b>
-            This is the input data
-            for the COMET API
-            (excluding those listed
-            in additional_comet_input_data).
-            When we use google sheets for
-            pilot, it may be the case that
-            we don't need to store this
-            data in BigQuery (unknown),
-            but when we switch to our own
-            sheet component we will want
-            to store this here
-          end note
-        }
       }
     }
   }
 
   package DataStore <<Rectangle>> {
     class CRCData {
-      - selectedCometScenarioKey
-      ...
-    }
-    class SupplierProfile
-    class SupplierProject {
-      -score
-      -sheetUrl
-      ...
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -rawData
     }
 
-    class CometScenario {
-      -timestamp
+    class User {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -privateKey
+      -profileKey
+      -firebaseUID
+      -firebaseUser
+    }
+
+    class UserProfile {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
       -type
+      -UserKey
+    }
+
+    class SupplierProject {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -name
+      -UserProfileKey
+    }
+
+    class SupplierProjectCometReport {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -fieldSetKey
+      -type
+      -subType
       -BiomassBurningCH4Uncertainty
       -BiomassBurningCH4
       -WetlandRiceCultivationCH4Uncertainty
@@ -187,7 +119,43 @@ package GCP <<Cloud>> {
       -BiomassBurningN2OUncertainty
       -DrainedOrganicSoilsN2OUncertainty
     }
-    note right of CometScenario
+
+    class SupplierProjectFieldSet {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -supplierProjectKey
+      -selectedSupplierProjectCometReportKey
+      -name
+      -sheetId
+      -WKT
+      -totalAcres
+      -regenAdoptionYear
+      -pre2000Management
+      -pre2000Tillage
+      -pre1980Management
+      -pre2000CRP
+      -CRPStartYear
+      -CRPEndYear
+      -CRPType
+    }
+
+    class VerifierJob {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -supplierProjectKey
+      -projectComplete
+      -projectCertainty
+      -projectValid
+      -comment
+      -verifierSignature
+      -supplierSignature
+    }
+
+    note right of SupplierProjectCometReport
       <b>Primary user:</b> Supplier
 
       <b>Nori uses this for:</b>
@@ -195,23 +163,23 @@ package GCP <<Cloud>> {
       - supplier uses this info to compare
       scenario potentials
 
-      <b>Where this data is used:</b>
-      - /app/projects?projectId=supplierProjectKey
-      (in the "Baseline Report" tab)
-
       <b>About this data:</b>
       This data comes from the "summary" sections
       at the end of a COMET API response.
 
-      There are 2 categories of this data (indicated by "type"):
-      - Baseline: a scenario projection for the case that the
-      supplier continues practices that reflect his historic practices
-      - Conservation: a scenario projection for the case that the
-      supplier changes practices to something else (i.e. "conversion
-      to non-legume grassland"). We may need an additional field to
-      represent possible sub-types.
+      There are 2 categories of this data
+      (indicated by "type"):
+      - Baseline: a scenario projection for the
+      case that the supplier continues practices
+      that reflect his historic practices
+      - Conservation: a scenario projection for
+      the case that the supplier changes
+      practices to something else (this is
+      indicated by a subType: i.e.
+      "conversion to non-legume grassland").
 
-      There are effectively 5 sections within this data:
+      There are effectively 5 sections within
+      this data:
       - Carbon measurements
       - CO2 measurements
       - CH4 measurements
@@ -219,194 +187,135 @@ package GCP <<Cloud>> {
       - Soil carbon stock changes through time
     end note
 
-    class Contact {
+    class ContactInformation {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -ownerKey
       -type
-      -SupplierProjectKey
-      -FirstName
-      -LastName
-      -Company
-      -Phone
-      -Email
-      -Address
-      -Address2
-      -City
-      -State
-      -Zip
+      -firstName
+      -lastName
+      -company?
+      -phone
+      -email
+      -address1
+      -address2?
+      -county
+      -city
+      -state
+      -postalCode
     }
   }
 }
 
 
 package "/app/supplier/project-page?projectId=supplierProjectKey" <<Rectangle>> {
-  package Supplier_Project_view <<Rectangle>> {
-    package Ownership <<Rectangle>> {
-      note as ownershipNote
-        This contains data which can be
-        read/written to Contact
+  package WizardForm <<Rectangle>> {
+    package Contacts <<Rectangle>> {
+      note as ContactsNote
+        This contains
+        data which can
+        be read/written
+        to ContactInformation
       end note
     }
 
     package "Land Management" <<Rectangle>> {
       note as landManagementNote
-        This contains a map view
-        of the parcels read from
-        Parcel_ParcelName
+        This contains
+        a map view
+        of the field sets
+        read from
+        FieldSet_FieldSetName
+
+        It also contains the link to
+        the related ProjectSheet
       end note
     }
 
-    package "Baseline Report" <<Rectangle>> {
+    package "CRC Estimate" <<Rectangle>> {
+      package "Scenario Selection" <<Rectangle>> {
+        note as scenarioSelectionNote
+          We will need a way
+          to calculate a
+          score as well as
+          to store the selected
+          scenario in CRCData
+        end note
+      }
 
+      package "Run Report" <<Rectangle>> {
+        note as RunReportNote
+          <b>Primary user:</b> Supplier
 
-      package "Projection Review" <<Rectangle>> {
-        package "Scenario Selection" <<Rectangle>> {
-          note as scenarioSelectionNote
-            We will need a way to calculate
-            a score as well as to store
-            the selected scenario in
-            CRCData
-          end note
-        }
+          <b>Nori uses this for:</b>
+          Generating a COMET API input file.
 
-        package "Details" <<Rectangle>> {
-          note as detailsNote
-            This is a view of the
-            data in the API output
-            contained in BigQuery
-          end note
-        }
+          <b>About this data:</b>
+          We parse this data from the
+          SupplierProjectFieldSet sheets,
+          create a COMET API input XML
+          and then store the returned
+          summary for parsing into a
+          CRC Estimate
+        end note
+      }
 
-        package "Difference" <<Rectangle>> {
-          note as differenceNote
-            This is calculated
-            by finding the difference
-            between baseline and
-            conservation scenarios
-          end note
-        }
-
+      package "CRC Estimate Table" <<Rectangle>> {
         package "Conservation Scenario" <<Rectangle>> {
           note as conservationScenarioNote
-            This contains data from
-            CometScenario where
-            type = Conservation
+            This contains data
+            from SupplierProjectCometReport
+            where type =
+            Conservation
           end note
         }
 
         package "Baseline Scenario" <<Rectangle>> {
           note as baselineScenarioNote
-            This contains data from
-            CometScenario where
-            type = Baseline
+            This contains data
+            from SupplierProjectCometReport
+            where type =
+            Baseline
           end note
         }
       }
     }
-  }
-}
 
-package "/app/verifier/verifier-page?projectId=supplierProjectKey" <<Rectangle>> {
-  note as verifiersPageNote
-    Verifiers Project Review Page
-  end note
-}
+    package "Verification" <<Rectangle>> {
 
-package /app/supplier/setup-your-project <<Rectangle>> {
-  package form <<Rectangle>> {
-    package sheet <<Rectangle>> {
-      class sheet_data {
-        -cropNumber
-        -cropName
-        -plantingDate
-        -continueFromPreviousYear
-        -harvestDate
-        -grain
-        -yield
-        -strawStoverHayRemoval
-        -tillageDate
-        -tillageType
-        -nApplicationDate
-        -nApplicationType
-        -nApplicationAmount
-        -nApplicationMethod
-        -eep
-      }
-      note left of sheet_data
-        <b>Primary user:</b> Supplier
-        <b>Secondary user:</b> Verifier
-        (in verifier's project page as
-        a verification review artifact)
-
-        <b>Nori uses this for:</b>
-        Generating a COMET API input file.
-
-        <b>About this data:</b>
-        We currently expect text input in a sheet
-        which is then:
-        - transformed from the sheet component
-        ( [ [ ], [ ] ... ] ) and inserted into
-        BigQuery using a CSV formatted stream
-        - transformed into XML format and sent to the
-        COMET API
-        - stored in Cloud Storage as a COMET API
-        input XML file for reference
-      end note
     }
-
-    note as formNote
-      This is a temporary component
-      that allows us to generate a
-      COMET API input file which can be
-      used to create Baseline +
-      Conservation Scenarios seen in
-      the supplier's "Baseline Report"
-      tab. It will soon be replaced (also
-      temporarily) by the data in
-      "Google Sheets": a temporary hook up to
-      Google Sheets for the duration of
-      scooter+ (which will eventually
-      be permanently replaced with
-      our react Sheets component once
-      we have finished pilot).
-    end note
   }
 }
 
 
-package unknown <<Rectangle>> {
-  class additional_comet_input_data {
-    -GEOM
-    -Pre-1980
-    -CRP
-    -CRPType
-    -CRPStartYear
-    -CRPEndYear
-    -Year1980-2000
-    -Year1980-2000_Tillage
-  }
-  note left of additional_comet_input_data
-    These fields are required
-    to build a valid
-    COMET API input file.
-    These might live best
-    in Land Management or
-    in ProjectSheet
-  end note
-}
+UserProfile o-- SupplierProject
+UserProfile o-- ContactInformation
 
-ProjectSheet .left. cometInput
-sheet .. cometInput
-additional_comet_input_data .. SupplierProject
-SupplierProfile o-- SupplierProject : supplierProfileKey
-SupplierProject o-left- CRCData : supplierProjectKey
-SupplierProject o-left- CometScenario : supplierProjectKey
-SupplierProject o-left- Contact : supplierProjectKey
+ContactInformation .. Contacts
+
+User o-- UserProfile
+
+SupplierProjectCometReport .. "CRC Estimate"
+
+SupplierProject o-- ContactInformation
+SupplierProject o-- SupplierProjectFieldSet
 SupplierProject .. "Dataset: supplierProjectKey"
-Ownership .. Contact
-"Baseline Report" .. CometScenario
-ProjectSheet .. SupplierProject
-"Land Management" .. "Table: Parcel_ParcelName"
-"Land Management" .. ProjectSheet
-"Scenario Selection" .. CRCData
-"Details" .. "Comet API output data"
+
+VerifierJob o-- SupplierProject
+VerifierJob .. Verification
+
+SupplierProjectFieldSet o-- SupplierProjectCometReport
+SupplierProjectFieldSet o-- CRCData
+SupplierProjectFieldSet -- ProjectSheet
+SupplierProjectFieldSet .. "Table: SupplierProjectFieldSetId"
+
+ProjectSheet .. "Land Management"
+ProjectSheet .. "Run Report"
+
+CRCData .. "Scenario Selection"
+
+"Table: SupplierProjectFieldSetId" .. "Land Management"
 
 @enduml
