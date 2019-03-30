@@ -3,386 +3,319 @@
 hide circle
 hide methods
 
+package "Google Drive\n" <<Cloud>> {
+  package "Google Sheets" <<Rectangle>> {
+    class "ProjectSheet" {
+      -sheetId
+      -WKT
+      -totalAcres
+      -regenAdoptionYear
+      -pre2000Management
+      -pre2000Tillage
+      -pre1980Management
+      -pre2000CRP
+      -CRPStartYear
+      -CRPEndYear
+      -CRPType
+      -...cropYears
+    }
+  }
+}
+
 package GCP <<Cloud>> {
   package BigQuery <<Rectangle>> {
-    package nori-website-prod <<Folder>> {
-      package noriProjectId <<Folder>> {
-        package output <<Rectangle>> {
-          class basicBaselineCID {
-            -timestamp
-            -BiomassBurningCH4Uncertainty
-            -BiomassBurningCH4
-            -WetlandRiceCultivationCH4Uncertainty
-            -WetlandRiceCultivationCH4
-            -SoilCH4Uncertainty
-            -LimingCO2Uncertainty
-            -SoilCarbonStockEnd
-            -LimingCO2
-            -UreaFertilizationCO2Uncertainty
-            -SoilCH4
-            -SoilCarbonStock2000
-            -SoilCarbonUncertainty
-            -UreaFertilizationCO2
-            -SoilCarbon
-            -DrainedOrganicSoilsCO2
-            -SoilN2OUncertainty
-            -BiomassBurningCarbonUncertainty
-            -WetlandRiceCultivationN2OUncertainty
-            -SoilCarbonStockBegin
-            -DrainedOrganicSoilsN2O
-            -SoilN2O
-            -BiomassBurningCarbon
-            -WetlandRiceCultivationN2O
-            -DrainedOrganicSoilsCO2Uncertainty
-            -BiomassBurningN2O
-            -BiomassBurningN2OUncertainty
-            -DrainedOrganicSoilsN2OUncertainty
-          }
-
-          note right of basicBaselineCID
-            <b>Implementation status:</b> mostly implemented,
-            but input welcome
-
-            <b>Primary user:</b> supplier and verifier
-
-            <b>Nori uses this for:</b>
-            - generating a project + crc score
-            - generating a basic verification info
-
-            <b>about this data:</b>
-            The data in this table should be the main (only?) data
-            a verifier is concerned with. It is also likely the only
-            thing we will consider when \ngenerating a score
-
-            This could very well be stored in DS for indexing
-          end note
-
-          class detailedBaselineCID {
-            -activity
-            -value
-            -timestamp
-          }
-
-          note left of detailedBaselineCID
-            <b>Implementation status:</b> implemented
-
-            <b>Primary user:</b> verifier
-            <b>Secondary user:</b> supplier
-
-            <b>Nori uses this for:</b>
-            - generating a verifier report
-            - generating a project + crc score (unknown)
-
-            <b>about this data:</b>
-            There are <b>1,484</b> possible "activity" values
-            (see the document called "(COMET) Key/value
-            glossary for API" in google drive). Each
-            value contains highly detailed information
-            relating to how the baseline was calculated.
-            It is most likely the case that this information
-            is relevant to how the baseline was generated,
-            but most likely not relevant to any verifier
-            or supplier.
-
-            <b>Implementation use notes:</b>
-            Richie and I are currently assuming that this
-            information will be available "as requested", and
-            will either be rendered as a csv download,
-            or in a basic table for this stage of development.
-
-            <b>Storage location justification:</b>
-            - It would be unrealistic to put these into datastore.
-          end note
-
-          note as output_note
-            this is the output data
-            from the COMET api
-          end note
+    package "Project: nori-website-prod" <<Folder>> {
+      package "Dataset: supplierProjectKey" <<Folder>> {
+        class "Table: SupplierProjectFieldSetId" {
+          -GeoJSON
+          +label: fieldSet
+          +name: fieldSetName
         }
 
-        package input <<Rectangle>> {
-          class baselineInputCurrentCID {
-            -cropNumber
-            -cropName
-            -plantingDate
-            -continueFromPreviousYear
-            -harvestDate
-            -grain
-            -yield
-            -strawStoverHayRemoval
-            -tillageDate
-            -tillageType
-            -nApplicationDate
-            -nApplicationType
-            -nApplicationAmount
-            -nApplicationMethod
-            -eep
-          }
+        note left of "Table: SupplierProjectFieldSetId"
+          <b>Primary user:</b>Supplier
+          <b>Secondary user:</b>Verifier
 
-          class baselineInputConversionCID {
-            -cropNumber
-            -cropName
-            -plantingDate
-            -continueFromPreviousYear
-            -harvestDate
-            -grain
-            -yield
-            -strawStoverHayRemoval
-            -tillageDate
-            -tillageType
-            -nApplicationDate
-            -nApplicationType
-            -nApplicationAmount
-            -nApplicationMethod
-            -eep
-          }
-          note as input_note
-            <b>Implementation status:</b> mostly
-            implemented
-
-            <b>Primary user:</b>Supplier
-            <b>Secondary user:</b>Verifier
-
-            <b>Nori uses this for:</b>Storing
-            Supplier input data in a format
-            that is 1) easy for a verifier
-            to download as a CSV for verifier
-            or supplier 2) to generate a COMET XML
-            API input file (note this is an artifact
-            of generation, and the BigQuery format is
-            not used firectly to call COMET) and 3)
-            to retrieve and update supplier project data
-
-
-            <b>About this data:</b>
-            this is the input data
-            for the COMET api
-            (excluding those listed
-            in text_input).
-
-            <b>Additional notes:</b>
-            - Currently baselineInputCurrentCID
-            and baselineInputConversionCID
-            are combined in a single input
-            table.
-            <b>Storage location justification</b>
-            - this format is highly compatible
-            with a sheets formatted input componet
-            as well as a CSV download component
-          end note
-        }
+          <b>About this data:</b>
+          Geographic data for a
+          supplier's field set. Used
+          to generate a map view.
+        end note
       }
     }
   }
 
   package DataStore <<Rectangle>> {
-    class CRCData
-    class SupplierProfile
+    class CRCData {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -rawData
+    }
+
+    class User {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -privateKey
+      -profileKey
+      -firebaseUID
+      -firebaseUser
+    }
+
+    class UserProfile {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -type
+      -UserKey
+    }
+
     class SupplierProject {
-      -score
-      -baselineInputCID
-      -baselineInputCurrentCID
-      -baselineInputConversionCID
-      -detailedBaselineCID
-      -basicBaselineCID
-      -GEOM
-      -Pre-1980
-      -CRP
-      -CRPType
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -name
+      -UserProfileKey
+    }
+
+    class SupplierProjectCometReport {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -fieldSetKey
+      -type
+      -subType
+      -BiomassBurningCH4Uncertainty
+      -BiomassBurningCH4
+      -WetlandRiceCultivationCH4Uncertainty
+      -WetlandRiceCultivationCH4
+      -SoilCH4Uncertainty
+      -LimingCO2Uncertainty
+      -SoilCarbonStockEnd
+      -LimingCO2
+      -UreaFertilizationCO2Uncertainty
+      -SoilCH4
+      -SoilCarbonStock2000
+      -SoilCarbonUncertainty
+      -UreaFertilizationCO2
+      -SoilCarbon
+      -DrainedOrganicSoilsCO2
+      -SoilN2OUncertainty
+      -BiomassBurningCarbonUncertainty
+      -WetlandRiceCultivationN2OUncertainty
+      -SoilCarbonStockBegin
+      -DrainedOrganicSoilsN2O
+      -SoilN2O
+      -BiomassBurningCarbon
+      -WetlandRiceCultivationN2O
+      -DrainedOrganicSoilsCO2Uncertainty
+      -BiomassBurningN2O
+      -BiomassBurningN2OUncertainty
+      -DrainedOrganicSoilsN2OUncertainty
+    }
+
+    class SupplierProjectFieldSet {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -supplierProjectKey
+      -selectedSupplierProjectCometReportKey
+      -name
+      -sheetId
+      -WKT
+      -totalAcres
+      -regenAdoptionYear
+      -pre2000Management
+      -pre2000Tillage
+      -pre1980Management
+      -pre2000CRP
       -CRPStartYear
       -CRPEndYear
-      -Year1980-2000
-      -Year2980-2000_Tillage
+      -CRPType
     }
-    note right of SupplierProject
-      <b>Implementation status:</b> mostly
-      unimplemented
 
-      it's quite possible a lot of this
-      information is best broken
-      into a "baseline + score"
-      entity
+    class VerifierJob {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -supplierProjectKey
+      -projectComplete
+      -projectCertainty
+      -projectValid
+      -comment
+      -verifierSignature
+      -supplierSignature
+    }
+
+    note right of SupplierProjectCometReport
+      <b>Primary user:</b> Supplier
+
+      <b>Nori uses this for:</b>
+      - generating a project + crc score
+      - supplier uses this info to compare
+      scenario potentials
+
+      <b>About this data:</b>
+      This data comes from the "summary" sections
+      at the end of a COMET API response.
+
+      There are 2 categories of this data
+      (indicated by "type"):
+      - Baseline: a scenario projection for the
+      case that the supplier continues practices
+      that reflect his historic practices
+      - Conservation: a scenario projection for
+      the case that the supplier changes
+      practices to something else (this is
+      indicated by a subType: i.e.
+      "conversion to non-legume grassland").
+
+      There are effectively 5 sections within
+      this data:
+      - Carbon measurements
+      - CO2 measurements
+      - CH4 measurements
+      - N2O measurements
+      - Soil carbon stock changes through time
     end note
+
+    class ContactInformation {
+      -id
+      -timeCreated
+      -timeUpdated
+      -isDeleted
+      -ownerKey
+      -type
+      -firstName
+      -lastName
+      -company?
+      -phone
+      -email
+      -address1
+      -address2?
+      -county
+      -city
+      -state
+      -postalCode
+    }
   }
 }
 
 
-package /app/supplier/project-page/noriProjectId <<Rectangle>> {
-  package Supplier_Project_view <<Rectangle>> {
-    package baseline_score <<Rectangle>> {
-      note as score1
-        This is <b>calculated</b> using
-        basicBaselineCID
-      end note
-    }
-    package baseline_basic_report <<Rectangle>> {
-      note as bb1
-        A basic report contains data from
-        basicBaselineCID
-      end note
-    }
-  }
-}
-
-package /app/verifier/verifier-page/noriProjectId <<Rectangle>> {
-  package Verifier_Project_view <<Rectangle>> {
-    package baseline_verification <<Rectangle>> {
-      note as bv1
-        This would contain inputs to apply
-        a score to a SupplierProject
-      end note
-    }
-    package baseline_detailed <<Rectangle>> {
-      note as bd1
-        Although we know all the data that exists
-        here, it is still unknown how useful it is
-        to display to either the supplier or verifier.
-        That said it can be easily pulled into a CSV
-        report from BigQuery
-      end note
-    }
-    package supplier_baseline_input <<Rectangle>> {
-      note as bi1
-        This is the data input by the
-        supplier in the text_input
-        and sheet form.
+package "/app/supplier/project-page?projectId=supplierProjectKey" <<Rectangle>> {
+  package WizardForm <<Rectangle>> {
+    package Contacts <<Rectangle>> {
+      note as ContactsNote
+        This contains
+        data which can
+        be read/written
+        to ContactInformation
       end note
     }
 
-    package baseline_basic_report_verification <<Rectangle>> {
-      note as bbrv1
-        A basic report contains data from
-        basicBaselineCID
+    package "Land Management" <<Rectangle>> {
+      note as landManagementNote
+        This contains
+        a map view
+        of the field sets
+        read from
+        FieldSet_FieldSetName
+
+        It also contains the link to
+        the related ProjectSheet
       end note
     }
-  }
-}
 
-package /app/supplier/setup-your-project <<Rectangle>> {
-  package form <<Rectangle>> {
-    package sheet <<Rectangle>> {
-      class sheet_data {
-        -cropNumber
-        -cropName
-        -plantingDate
-        -continueFromPreviousYear
-        -harvestDate
-        -grain
-        -yield
-        -strawStoverHayRemoval
-        -tillageDate
-        -tillageType
-        -nApplicationDate
-        -nApplicationType
-        -nApplicationAmount
-        -nApplicationMethod
-        -eep
+    package "CRC Estimate" <<Rectangle>> {
+      package "Scenario Selection" <<Rectangle>> {
+        note as scenarioSelectionNote
+          We will need a way
+          to calculate a
+          score as well as
+          to store the selected
+          scenario in CRCData
+        end note
       }
-      note left of sheet_data
-        <b>Implementation status:</b> mostly
-        implemented
 
-        <b>Primary user:</b> supplier
-        <b>Secondary user:</b> verifier
-        (in verifier's project page as
-        a verification review artifact)
+      package "Run Report" <<Rectangle>> {
+        note as RunReportNote
+          <b>Primary user:</b> Supplier
 
-        <b>Nori uses this for:</b>
-        - generating a COMET API input file.
-        We currently extep text input in a sheet
-        which is transformed from a format of
-        [[],[]...] and then flattened and
-        inserted into BigQuery in CSV format
-        and transformed into XML format for
-        the COMET API
+          <b>Nori uses this for:</b>
+          Generating a COMET API input file.
 
-        <b>Storage location</b>: BigQuery
-        <b>Storage location justification:</b>
-        It seems gratuitous to store in datastore. since
-        all of the sheet_data is repeated 26x
+          <b>About this data:</b>
+          We parse this data from the
+          SupplierProjectFieldSet sheets,
+          create a COMET API input XML
+          and then store the returned
+          summary for parsing into a
+          CRC Estimate
+        end note
+      }
 
-        <b>Additional notes:</b> it turns out to be quite
-        easy to transform data from [[],...] to CSV format for
-        BigQuery inserting, and also easy to normalize into
-        JSON (which can the be structured such that it can be
-        easily converted to XML). Little other thought has
-        been given into normalizing input data.
-        end
+      package "CRC Estimate Table" <<Rectangle>> {
+        package "Conservation Scenario" <<Rectangle>> {
+          note as conservationScenarioNote
+            This contains data
+            from SupplierProjectCometReport
+            where type =
+            Conservation
+          end note
+        }
 
-      end note
+        package "Baseline Scenario" <<Rectangle>> {
+          note as baselineScenarioNote
+            This contains data
+            from SupplierProjectCometReport
+            where type =
+            Baseline
+          end note
+        }
+      }
     }
 
-    package text_input <<Rectangle>> {
-      class text_input_data {
-        -GEOM
-        -Pre-1980
-        -CRP
-        -CRPType
-        -CRPStartYear
-        -CRPEndYear
-        -Year1980-2000
-        -Year2980-2000_Tillage
-      }
-      note left of text_input_data
-        <b>Implementation status:</b> not
-        implemented
+    package "Verification" <<Rectangle>> {
 
-        <b>Primary user:</b> supplier
-        <b>Secondary user:</b> verifier
-        (in verifier's project page as
-        a verification review artifact)
-
-        <b>Nori uses this for:</b>Basic
-        supplierProject description
-
-        <b>Additional notes</b>
-        These are input one time
-
-        <b>Storage location</b>: DataStore
-        <b>Storage location justification:</b>
-        This data is input once per project and
-        therefore makes sense to just add
-        directly to the supplierProject ent
-      end note
     }
   }
 }
 
-sheet .. baselineInputCurrentCID
-sheet .. baselineInputConversionCID
-text_input .left. SupplierProject
 
-SupplierProfile o-- SupplierProject : supplierProfileKey
-SupplierProject o-left- CRCData : noriProjectId
-SupplierProject .. basicBaselineCID
-SupplierProject .. baselineInputCurrentCID
-SupplierProject .. baselineInputConversionCID
-SupplierProject .. detailedBaselineCID
-baseline_basic_report .. SupplierProject : basicBaslineCID
-baseline_basic_report_verification .. SupplierProject : basicBaslineCID
-baseline_score .. SupplierProject
-supplier_baseline_input .. SupplierProject : baselineInputCID
-baseline_detailed .. SupplierProject : detailedBaslineCID
-baseline_verification .. SupplierProject
+UserProfile o-- SupplierProject
+UserProfile o-- ContactInformation
 
-note as bi2
-  This data can be easily pulled directly
-  from baselineInputCurrentCID
-  and baselineInputConversionCID
+ContactInformation .. Contacts
 
-  BigQuery allows us to very easily
-  pull this data in either a sheets format
-  or a downloadable CSV (extremly low
-  overhead)
+User o-- UserProfile
 
-  This is the only data we currently know of
-  that can/will be transformed from an
-  external datasource such as granular
-end note
+SupplierProjectCometReport .. "CRC Estimate"
 
+SupplierProject o-- ContactInformation
+SupplierProject o-- SupplierProjectFieldSet
+SupplierProject .. "Dataset: supplierProjectKey"
 
+VerifierJob o-- SupplierProject
+VerifierJob .. Verification
 
-bi1 -- bi2
+SupplierProjectFieldSet o-- SupplierProjectCometReport
+SupplierProjectFieldSet o-- CRCData
+SupplierProjectFieldSet -- ProjectSheet
+SupplierProjectFieldSet .. "Table: SupplierProjectFieldSetId"
 
+ProjectSheet .. "Land Management"
+ProjectSheet .. "Run Report"
+
+CRCData .. "Scenario Selection"
+
+"Table: SupplierProjectFieldSetId" .. "Land Management"
 
 @enduml
