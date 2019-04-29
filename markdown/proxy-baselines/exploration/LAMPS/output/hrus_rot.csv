@@ -1,0 +1,37 @@
+@T, rot_hru
+name, hrus_rot.csv
+descr, hru rotation input parameter
+# hru rotation information
+# Mon Apr 15 17:46:18 MDT 2019
+# ID = HRU or Field ID or polygon ID
+# RID = Rotation ID
+# REDU = Reduction switch for nitrogen modul
+# IRRI = LAMPS detected Irrigation (1 detected / 0 not detected)
+# landuseID = generic landuse ID for the landuseID in the HRUs.csv file
+# LAMPS provided information
+ 
+@H,ID,RID,REDU,IRRI,landuseID
+,0,4,1,0,7
+,1,7,1,1,7
+,2,7,1,1,7
+,3,7,1,0,7
+,4,1,1,0,7
+,5,9,1,0,7
+,6,8,1,1,7
+,7,7,1,1,7
+,8,7,1,1,7
+,9,10,1,1,7
+,10,7,1,1,7
+,11,8,1,1,7
+,12,7,1,1,7
+,13,5,1,1,7
+,14,6,1,0,7
+,15,5,1,1,7
+,16,4,1,0,3
+,17,3,1,0,7
+,18,6,1,0,7
+,19,5,1,1,7
+,20,3,1,0,7
+,21,2,1,0,7
+,22,2,1,0,7
+,23,6,1,0,7

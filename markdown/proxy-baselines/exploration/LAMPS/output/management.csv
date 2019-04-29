@@ -1,0 +1,136 @@
+@T, management
+desc, management.csv
+ 
+# landuse management
+# Date format 'MM-DD' 
+# ID crop-ID referred to crop.csv
+# Date when operation starts
+# Till-id according to till.csv
+# Fert-id according to fert.csv
+# FAmount amount of fertilizer application [kg/ha] absolut
+# Plant (1) assumes that planting operation; - no planting
+# Harvest (1-4)assumes that plant is harvested; - no harvest
+# for harvesting 4 codes are implemented:
+# (1) assumes harvesting with main crop & cover crop, cover crop leaves the field, plant growth stopped
+# (2) assumes harvesting with main crop cover crop remains on the field; plant growth stopped
+# (3) assumes harvesting with main crop & cover crop; plant growth continues (may not be suitable for meadows)
+# (4) assumes harvesting with main crop plant growth continues
+# FracHarv is the fraction of the target biomass which will be removed by the harvest (according to harvest code)
+# CID 27 spring wheat; 88 winter rape; 97 winter barley; 12 pasture; 7 Forrest-Deciduous; 98 urban; 8 Coniferous Forrest; 28 Winter-Wheat; 31Spring Barley; 20 Maize; 100 yellow Mustard; 16 Range-Brush; 18 Water
+# MID: 0 Fallow; 1 Forrest-Deciduous; 2 Forrest-Coniferous; 3 Pasture; 4 Range-Grasses; 5 Range-Brush; 6 Water(not supported in AgES-W); 7 Urban Areas; 
+# 
+# Mon Apr 15 17:46:18 MDT 2019
+# LAMPS provided information are starting with MID 10 
+ 
+@H,MID,CID,Date,TID,FID,FAmount,PLANT,HARVEST,FRACHARV,Description
+,1,1, 01-01,-,-,-,-,-,-,Fallow,
+,1,1, 12-31,-,-,-,-,-,-,Fallow,
+,2,7, 01-01,-,-,-,-,-,-,Forrest-Deciduous,
+,2,7, 10-22,-,-,-,-,1,0.1,Forrest-Deciduous,
+,2,7, 12-31,-,-,-,-,-,-,Forrest-Deciduous,
+,3,8, 01-01,-,-,-,-,-,-,Forrest-Coniferous,
+,3,8, 11-16,-,-,-,-,1,0.1,Forrest-Coniferous,
+,3,8, 12-31,-,-,-,-,-,-,Forrest-Coniferous,
+,4,12, 03-31,-,45,1125,-,-,-,Pasture,
+,4,12, 06-29,-,-,-,-,1,0.9,Pasture,
+,4,12, 07-09,-,21,100,-,-,-,Pasture,
+,4,12, 10-27,-,-,-,-,1,0.9,Pasture,
+,5,15, 01-01,-,-,-,-,-,-,Range-Grasses,
+,5,15, 10-22,-,-,-,-,1,0.1,Range-Grasses,
+,5,15, 12-31,-,-,-,-,-,-,Range-Grasses,
+,6,16, 01-01,-,-,-,-,-,-,Range-Brush,
+,6,16, 10-22,-,-,-,-,1,0.1,Range-Brush,
+,6,16, 12-31,-,-,-,-,-,-,Range-Brush,
+,7,18, 01-01,-,-,-,-,-,-,Water,
+,7,18, 12-31,-,-,-,-,-,-,Water,
+,8,98, 01-01,-,-,-,1,-,-,Urban Areas,
+,8,98, 12-31,-,-,-,-,1,-,Urban Areas,
+,9,1, 01-01,-,-,-,1,-,-,Agricultural Land-Generic,
+,9,1, 12-31,-,-,-,-,1,0.9,Agricultural Land-Generic,
+,10,19, 05-01,80,-,-,1,-,-,Corn: grain
+,10,19, 10-05,-,-,-,-,1,0.5,
+,11,28, 09-10,90,-,-,1,-,-,Wheat: winter 7in rows
+,11,28, 07-10,-,-,-,-,1,0.5,
+,11,28, 10-20,84,-,-,-,-,-,
+,11,28, 05-01,84,-,-,-,-,-,
+,11,28, 06-01,84,-,-,-,-,-,
+,11,28, 07-01,82,-,-,-,-,-,
+,11,28, 08-15,82,-,-,-,-,-,
+,11,28, 09-01,86,-,-,-,-,-,
+,12,52, 11-01,88,-,-,-,-,-,
+,12,52, 04-25,87,-,-,-,-,-,
+,12,52, 05-01,90,-,-,1,-,-,Alfalfa: spring seed
+,12,52, 05-01,86,-,-,-,-,-,
+,12,52, 07-15,-,-,-,-,1,0.9,Alfalfa: spring seed regrowth after cutting
+,12,52, 09-01,-,-,-,-,1,0.9,Alfalfa: spring seed senes to y2 regrowth
+,12,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,12,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,12,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr2 senes to yr3 regrowth
+,12,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,12,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,12,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr3 senes to yr4 regrowth
+,13,28, 10-01,90,-,-,1,-,-,Wheat: winter 7in rows
+,13,28, 10-01,86,-,-,-,-,-,
+,13,28, 07-10,-,-,-,-,1,0.5,
+,14,52, 01-01,-,-,-,1,-,-,Alfalfa: yr4 regrowth after cutting
+,14,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,14,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,14,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,14,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,14,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,15,1, 10-20,84,-,-,-,-,-,
+,15,1, 05-01,84,-,-,-,-,-,
+,15,1, 06-01,84,-,-,-,-,-,
+,15,1, 07-01,82,-,-,-,-,-,
+,15,1, 08-15,82,-,-,-,-,-,
+,15,1, 09-01,86,-,-,-,-,-,
+,16,52, 08-01,79,-,-,-,-,-,
+,16,52, 08-10,87,-,-,-,-,-,
+,16,52, 08-15,90,-,-,1,-,-,Alfalfa: fall seed senes to yr2 regrowth
+,16,52, 08-15,86,-,-,-,-,-,
+,16,52, 06-01,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,16,52, 07-15,-,-,-,-,1,0.9,Alfalfa: yr2 senes to yr3 regrowth
+,16,52, 06-01,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,16,52, 07-15,-,-,-,-,1,0.9,Alfalfa: yr3 senes to yr4 regrowth
+,16,52, 06-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,16,52, 07-15,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,16,52, 06-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,16,52, 07-15,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,16,52, 06-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,16,52, 07-15,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,17,19, 03-15,89,-,-,-,-,-,
+,17,19, 04-05,85,-,-,-,-,-,
+,17,19, 04-15,86,-,-,-,-,-,
+,17,19, 04-28,83,-,-,1,-,-,Corn: grain
+,17,19, 06-12,81,-,-,-,-,-,
+,17,19, 07-03,81,-,-,-,-,-,
+,17,19, 10-01,-,-,-,-,1,0.3,
+,18,52, 11-01,88,-,-,-,-,-,
+,18,52, 04-25,87,-,-,-,-,-,
+,18,52, 05-01,90,-,-,1,-,-,Alfalfa/oat: nurse crop spring seed
+,18,52, 05-01,86,-,-,-,-,-,
+,18,52, 07-25,-,-,-,-,1,0.5,
+,18,52, 07-26,-,-,-,1,-,-,Alfalfa/oat: grwth after oat harv to y2 regrth
+,18,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,18,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,18,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr2 senes to yr3 regrowth
+,18,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,18,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,18,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr3 senes to yr4 regrowth
+,18,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,18,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,18,52, 08-10,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth
+,19,52, 11-01,84,-,-,-,-,-,
+,19,52, 04-15,87,-,-,-,-,-,
+,19,52, 04-22,86,-,-,-,-,-,
+,19,52, 05-01,90,-,-,1,-,-,Alfalfa/oat(silage): spring seed
+,19,52, 08-15,-,-,-,-,1,0.9,Alfalfa/oat: silage harv to yr2  1st cut
+,19,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,19,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr2 regrowth after cutting
+,19,52, 08-19,-,-,-,-,1,0.9,Alfalfa: yr2 senes to yr3 regrowth
+,19,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,19,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr3 regrowth after cutting
+,19,52, 08-20,-,-,-,-,1,0.9,Alfalfa: yr3 senes to yr4 regrowth
+,19,52, 05-25,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,19,52, 07-01,-,-,-,-,1,0.9,Alfalfa: yr4 regrowth after cutting
+,19,52, 08-19,-,-,-,-,1,0.9,Alfalfa: yr4 senes to yr5 regrowth

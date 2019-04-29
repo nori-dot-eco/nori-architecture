@@ -1,0 +1,29 @@
+# delta-factor for adjusted average confidence value: 0.15
+# Shown sequences are for the NASS CropScape provided time period 
+ 
+ 
+FieldID / HRU,Generic LMOD Rotation (GLR) Best Match,LMOD Found Rotation Duration (Year(s)),LMOD Rotation Acronym, Adjusted Average Confidence Value (AACV),Detected NASS Sequence,Rebuilt from LMOD Crop Rotation Sequence,GLR Start Year,Jaro Similarity,Field-Crop,Irrigated Area (%) 2002,Irrigated Area(%) 2007,Irrigated Area (%) 2012,State,County,CMZ,Area
+0,Wheat:winter;,1,&,1.0,Z@@@&@@@@@@,&&&&&&&&&&&,2008,0.394,TRUE,7.0,0.0,14.0, -CO, -Weld, -5,529915
+1,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.554,AAZ&T&AAAAA,AAAAAAAAAAA,2008,0.758,TRUE,83.0,65.0,100.0, -CO, -Weld, -5,69067
+2,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.547,&TAAAAAATTT,AAAAAAAAAAA,2008,0.697,TRUE,0.0,91.0,98.0, -CO, -Weld, -5,30126
+3,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.482,&AAAAAAAAAA,AAAAAAAAAAA,2008,0.939,TRUE,0.0,88.0,31.0, -CO, -Weld, -5,16888
+4,Corn:grain;,1,T,1.0,&TT&TTTTX&T,TTTTTTTTTTT,2008,0.758,TRUE,10.0,0.0,32.0, -CO, -Weld, -5,116711
+5,Alfalfa;Alfalfa;Alfalfa;Alfalfa;,4,AAAA,1.321,Z&Z&T&ZAAAA,AAAAAAAAAAA,2008,0.576,TRUE,0.0,0.0,0.0, -CO, -Weld, -5,23889
+6,Corn:grain;,1,T,1.0,TATTTAAAATT,TTTTTTTTTTT,2008,0.697,TRUE,29.0,0.0,44.0, -CO, -Weld, -5,240961
+7,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.541,AAAAAATAAAA,AAAAAAAAAAA,2008,0.939,TRUE,80.0,86.0,97.0, -CO, -Weld, -5,288325
+8,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.543,&TTTAAAAAAA,AAAAAAAAAAA,2008,0.758,TRUE,100.0,72.0,91.0, -CO, -Weld, -5,274026
+9,Alfalfa;Alfalfa;Alfalfa;Alfalfa;,4,AAAA,1.382,&TTTT&TAAAA,AAAAAAAAAAA,2008,0.576,TRUE,22.0,28.0,49.0, -CO, -Weld, -5,43640
+10,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.539,TAAAAAAAAAA,AAAAAAAAAAA,2008,0.939,TRUE,82.0,31.0,100.0, -CO, -Weld, -5,207020
+11,Corn:grain;,1,T,1.0,TXDTTTTTTX&,TTTTTTTTTTT,2008,0.758,TRUE,23.0,85.0,93.0, -CO, -Weld, -5,271297
+12,Alfalfa;Alfalfa;Alfalfa;Alfalfa;Alfalfa;,5,AAAAA,1.545,&TAAAAAATTT,AAAAAAAAAAA,2008,0.697,TRUE,0.0,91.0,91.0, -CO, -Weld, -5,68586
+13,Alfalfa;Alfalfa;,2,AA,1.091,AATTTTTTX&T,AAAAAAAAAAA,2008,0.455,TRUE,41.0,90.0,100.0, -CO, -Weld, -5,138440
+14,Fallow;,1,Z,1.0,&ZZZZ&ZZZZZ,ZZZZZZZZZZZ,2008,0.879,TRUE,0.0,0.0,0.0, -CO, -Weld, -5,1090983
+15,Alfalfa;Alfalfa;,2,AA,1.092,AATT&TTT&T&,AAAAAAAAAAA,2008,0.455,TRUE,59.0,88.0,100.0, -CO, -Weld, -5,146543
+16,Grass/Pasture,-,-,-,@@@@@@@@@@@,-,2008,-,FALSE,-,-,-, -CO, -Weld, -5,453830
+17,Other Hay/Non Alfalfa,-,-,-,@&@&@@@@@@@,-,2008,-,FALSE,-,-,-, -CO, -Weld, -5,169196
+18,Fallow;,1,Z,1.0,ZZ&Z&&ZZ&Z&,ZZZZZZZZZZZ,2008,0.697,TRUE,19.0,0.0,0.0, -CO, -Weld, -5,751575
+19,Alfalfa;Alfalfa;,2,AA,1.012,&ATATAATTAA,AAAAAAAAAAA,2008,0.697,TRUE,44.0,44.0,100.0, -CO, -Weld, -5,5667
+20,Alfalfa;Alfalfa;Alfalfa;,3,AAA,1.21,&Z&Z&Z&@AAA,AAAAAAAAAAA,2008,0.515,TRUE,0.0,0.0,0.0, -CO, -Weld, -5,71333
+21,Wheat:winter;Fallow;,2,&Z,1.039,&ZDZZZ&Z&Z&,&Z&Z&Z&Z&Z&,2008,0.768,TRUE,0.0,0.0,0.0, -CO, -Weld, -5,30909
+22,Wheat:winter;Fallow;,2,&Z,1.112,&Z&TZ&ZAAAA,&Z&Z&Z&Z&Z&,2008,0.697,TRUE,15.0,0.0,13.0, -CO, -Weld, -5,130081
+23,Fallow;,1,Z,1.0,@@@@!@@@Z@Z,ZZZZZZZZZZZ,2008,0.455,TRUE,33.0,0.0,0.0, -CO, -Weld, -5,217583

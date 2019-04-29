@@ -1,0 +1,1151 @@
+# All results are based on NASS CropScape crops
+Field-ID or HRU-ID, NASS CropScape Year, Vegetation or Crop, Confidence-Value(fraction)
+0,2008,Fallow/Idle Cropland,0.201
+0,2008,Winter Wheat,0.195
+0,2008,Other Hay/Non Alfalfa,0.084
+0,2008,Grass/Pasture,0.072
+0,2008,Developed/Open Space,0.002
+0,2009,Grass/Pasture,0.353
+0,2009,Fallow/Idle Cropland,0.216
+0,2009,Winter Wheat,0.055
+0,2009,Developed/Open Space,0.006
+0,2009,Corn,0.005
+0,2009,Other Hay/Non Alfalfa,0.004
+0,2009,Dry Beans,0.003
+0,2009,Sunflower,0.003
+0,2009,Alfalfa,0.002
+0,2010,Grass/Pasture,0.242
+0,2010,Fallow/Idle Cropland,0.23
+0,2010,Winter Wheat,0.191
+0,2010,Other Hay/Non Alfalfa,0.015
+0,2010,Developed/Open Space,0.005
+0,2010,Barley,0.004
+0,2010,Oats,0.001
+0,2010,Triticale,0.0
+0,2011,Grass/Pasture,0.264
+0,2011,Winter Wheat,0.255
+0,2011,Fallow/Idle Cropland,0.088
+0,2011,Other Hay/Non Alfalfa,0.017
+0,2011,Developed/Open Space,0.005
+0,2011,Alfalfa,0.001
+0,2012,Winter Wheat,0.333
+0,2012,Grass/Pasture,0.256
+0,2012,Fallow/Idle Cropland,0.108
+0,2012,Other Hay/Non Alfalfa,0.092
+0,2012,Alfalfa,0.01
+0,2012,Developed/Open Space,0.009
+0,2012,Corn,0.002
+0,2013,Grass/Pasture,0.308
+0,2013,Fallow/Idle Cropland,0.199
+0,2013,Winter Wheat,0.198
+0,2013,Developed/Open Space,0.008
+0,2013,Other Hay/Non Alfalfa,0.003
+0,2013,Corn,0.002
+0,2013,Alfalfa,0.002
+0,2014,Grass/Pasture,0.307
+0,2014,Fallow/Idle Cropland,0.249
+0,2014,Winter Wheat,0.2
+0,2014,Other Hay/Non Alfalfa,0.05
+0,2014,Developed/Open Space,0.009
+0,2014,Rye,0.002
+0,2014,Corn,0.002
+0,2014,Alfalfa,0.001
+0,2014,Sunflower,0.001
+0,2014,Oats,0.001
+0,2015,Grass/Pasture,0.441
+0,2015,Winter Wheat,0.234
+0,2015,Fallow/Idle Cropland,0.174
+0,2015,Developed/Open Space,0.011
+0,2015,Other Hay/Non Alfalfa,0.005
+0,2015,Corn,0.005
+0,2015,Alfalfa,0.001
+0,2016,Grass/Pasture,0.453
+0,2016,Winter Wheat,0.225
+0,2016,Fallow/Idle Cropland,0.204
+0,2016,Developed/Open Space,0.011
+0,2016,Corn,0.005
+0,2016,Other Hay/Non Alfalfa,0.004
+0,2016,Alfalfa,0.001
+0,2016,Barley,0.001
+0,2017,Grass/Pasture,0.447
+0,2017,Winter Wheat,0.252
+0,2017,Fallow/Idle Cropland,0.166
+0,2017,Developed/Open Space,0.007
+0,2017,Other Hay/Non Alfalfa,0.004
+0,2017,Alfalfa,0.001
+0,2017,Oats,0.0
+0,2018,Grass/Pasture,0.448
+0,2018,Fallow/Idle Cropland,0.203
+0,2018,Winter Wheat,0.171
+0,2018,Rye,0.025
+0,2018,Other Hay/Non Alfalfa,0.016
+0,2018,Developed/Open Space,0.007
+0,2018,Corn,0.002
+0,2018,Alfalfa,0.001
+0,2018,Millet,0.001
+1,2008,Alfalfa,0.735
+1,2008,Corn,0.066
+1,2008,Winter Wheat,0.035
+1,2008,Sod/Grass Seed,0.012
+1,2008,Oats,0.005
+1,2008,Grass/Pasture,0.002
+1,2009,Alfalfa,0.651
+1,2009,Corn,0.138
+1,2009,Grass/Pasture,0.039
+1,2009,Other Hay/Non Alfalfa,0.02
+1,2009,Sod/Grass Seed,0.011
+1,2010,Fallow/Idle Cropland,0.542
+1,2010,Dry Beans,0.123
+1,2010,Alfalfa,0.043
+1,2010,Grass/Pasture,0.036
+1,2010,Corn,0.035
+1,2010,Other Hay/Non Alfalfa,0.01
+1,2010,Barley,0.009
+1,2011,Winter Wheat,0.543
+1,2011,Barley,0.129
+1,2011,Corn,0.127
+1,2011,Alfalfa,0.098
+1,2012,Corn,0.692
+1,2012,Sugarbeets,0.06
+1,2012,Fallow/Idle Cropland,0.054
+1,2012,Alfalfa,0.043
+1,2012,Winter Wheat,0.012
+1,2012,Dry Beans,0.007
+1,2012,Herbaceous Wetlands,0.002
+1,2013,Winter Wheat,0.367
+1,2013,Alfalfa,0.213
+1,2013,Fallow/Idle Cropland,0.14
+1,2013,Oats,0.08
+1,2013,Grass/Pasture,0.015
+1,2013,Sorghum,0.008
+1,2014,Alfalfa,0.717
+1,2014,Corn,0.09
+1,2014,Other Hay/Non Alfalfa,0.032
+1,2014,Fallow/Idle Cropland,0.011
+1,2014,Sorghum,0.008
+1,2015,Alfalfa,0.87
+1,2016,Alfalfa,0.872
+1,2017,Alfalfa,0.877
+1,2018,Alfalfa,0.848
+2,2008,Winter Wheat,0.772
+2,2008,Alfalfa,0.056
+2,2008,Barley,0.05
+2,2008,Corn,0.029
+2,2009,Corn,0.536
+2,2009,Sugarbeets,0.149
+2,2009,Alfalfa,0.114
+2,2009,Dry Beans,0.052
+2,2009,Grass/Pasture,0.034
+2,2010,Alfalfa,0.498
+2,2010,Barley,0.115
+2,2010,Corn,0.091
+2,2010,Oats,0.031
+2,2010,Sugarbeets,0.027
+2,2010,Other Hay/Non Alfalfa,0.026
+2,2010,Dry Beans,0.018
+2,2011,Alfalfa,0.672
+2,2011,Barley,0.071
+2,2011,Winter Wheat,0.061
+2,2011,Sugarbeets,0.057
+2,2012,Alfalfa,0.806
+2,2012,Fallow/Idle Cropland,0.028
+2,2012,Triticale,0.014
+2,2013,Alfalfa,0.78
+2,2013,Corn,0.059
+2,2013,Fallow/Idle Cropland,0.056
+2,2014,Alfalfa,0.773
+2,2014,Corn,0.058
+2,2014,Fallow/Idle Cropland,0.029
+2,2015,Alfalfa,0.786
+2,2015,Corn,0.089
+2,2016,Corn,0.542
+2,2016,Alfalfa,0.337
+2,2016,Fallow/Idle Cropland,0.029
+2,2017,Corn,0.624
+2,2017,Alfalfa,0.226
+2,2017,Fallow/Idle Cropland,0.057
+2,2018,Corn,0.605
+2,2018,Alfalfa,0.164
+2,2018,Fallow/Idle Cropland,0.11
+3,2008,Winter Wheat,0.665
+3,2008,Alfalfa,0.144
+3,2008,Corn,0.098
+3,2009,Alfalfa,0.49
+3,2009,Corn,0.41
+3,2010,Alfalfa,0.429
+3,2010,Corn,0.42
+3,2010,Oats,0.026
+3,2011,Alfalfa,0.772
+3,2011,Corn,0.103
+3,2012,Alfalfa,0.575
+3,2012,Corn,0.198
+3,2012,Dry Beans,0.06
+3,2013,Alfalfa,0.846
+3,2013,Corn,0.051
+3,2014,Alfalfa,0.713
+3,2014,Sugarbeets,0.1
+3,2014,Other Hay/Non Alfalfa,0.048
+3,2015,Alfalfa,0.822
+3,2015,Dry Beans,0.044
+3,2016,Alfalfa,0.581
+3,2016,Corn,0.259
+3,2016,Fallow/Idle Cropland,0.05
+3,2017,Alfalfa,0.536
+3,2017,Corn,0.358
+3,2018,Alfalfa,0.518
+3,2018,Corn,0.348
+4,2008,Winter Wheat,0.846
+4,2008,Developed/Open Space,0.009
+4,2008,Barley,0.006
+4,2008,Developed/Low Intensity,0.004
+4,2009,Corn,0.893
+4,2009,Developed/Open Space,0.007
+4,2009,Other Hay/Non Alfalfa,0.007
+4,2009,Developed/Low Intensity,0.006
+4,2010,Corn,0.883
+4,2010,Dry Beans,0.022
+4,2010,Barley,0.012
+4,2010,Developed/Low Intensity,0.005
+4,2011,Winter Wheat,0.822
+4,2011,Barley,0.042
+4,2011,Developed/Open Space,0.025
+4,2011,Developed/Low Intensity,0.006
+4,2012,Corn,0.879
+4,2012,Developed/Open Space,0.01
+4,2013,Corn,0.843
+4,2013,Developed/Open Space,0.029
+4,2013,Alfalfa,0.015
+4,2013,Developed/Low Intensity,0.007
+4,2014,Corn,0.858
+4,2014,Alfalfa,0.014
+4,2014,Fallow/Idle Cropland,0.007
+4,2014,Developed/Low Intensity,0.007
+4,2014,Sorghum,0.005
+4,2014,Developed/Open Space,0.005
+4,2015,Corn,0.893
+4,2015,Sugarbeets,0.015
+4,2015,Developed/Low Intensity,0.007
+4,2015,Developed/Open Space,0.006
+4,2016,Dry Beans,0.723
+4,2016,Corn,0.023
+4,2016,Alfalfa,0.014
+4,2016,Developed/Low Intensity,0.007
+4,2016,Developed/Open Space,0.007
+4,2017,Winter Wheat,0.876
+4,2017,Alfalfa,0.014
+4,2017,Developed/Low Intensity,0.006
+4,2017,Developed/Open Space,0.004
+4,2018,Corn,0.879
+4,2018,Developed/Low Intensity,0.006
+4,2018,Developed/Open Space,0.004
+5,2008,Fallow/Idle Cropland,0.721
+5,2008,Winter Wheat,0.099
+5,2008,Alfalfa,0.031
+5,2008,Grass/Pasture,0.006
+5,2009,Winter Wheat,0.509
+5,2009,Grass/Pasture,0.205
+5,2009,Corn,0.033
+5,2009,Other Hay/Non Alfalfa,0.029
+5,2010,Fallow/Idle Cropland,0.626
+5,2010,Barley,0.077
+5,2010,Dry Beans,0.059
+5,2010,Winter Wheat,0.034
+5,2010,Corn,0.034
+5,2010,Grass/Pasture,0.017
+5,2011,Winter Wheat,0.843
+5,2011,Barley,0.079
+5,2012,Corn,0.829
+5,2012,Other Hay/Non Alfalfa,0.03
+5,2012,Triticale,0.016
+5,2013,Winter Wheat,0.709
+5,2013,Corn,0.065
+5,2013,Alfalfa,0.064
+5,2013,Grass/Pasture,0.021
+5,2014,Fallow/Idle Cropland,0.733
+5,2014,Alfalfa,0.061
+5,2014,Winter Wheat,0.034
+5,2014,Corn,0.032
+5,2014,Oats,0.019
+5,2015,Alfalfa,0.621
+5,2015,Corn,0.165
+5,2015,Winter Wheat,0.066
+5,2015,Fallow/Idle Cropland,0.03
+5,2016,Alfalfa,0.778
+5,2016,Corn,0.067
+5,2016,Fallow/Idle Cropland,0.032
+5,2017,Alfalfa,0.783
+5,2017,Winter Wheat,0.097
+5,2018,Alfalfa,0.757
+5,2018,Corn,0.032
+5,2018,Fallow/Idle Cropland,0.031
+5,2018,Rye,0.025
+6,2008,Corn,0.884
+6,2009,Alfalfa,0.448
+6,2009,Winter Wheat,0.342
+6,2009,Barley,0.081
+6,2009,Fallow/Idle Cropland,0.01
+6,2009,Grass/Pasture,0.008
+6,2009,Sugarbeets,0.007
+6,2009,Corn,0.003
+6,2009,Other Hay/Non Alfalfa,0.003
+6,2010,Corn,0.519
+6,2010,Alfalfa,0.361
+6,2010,Other Hay/Non Alfalfa,0.012
+6,2010,Sugarbeets,0.009
+6,2010,Sorghum,0.003
+6,2011,Corn,0.449
+6,2011,Alfalfa,0.441
+6,2011,Sugarbeets,0.003
+6,2011,Dry Beans,0.002
+6,2012,Corn,0.44
+6,2012,Alfalfa,0.434
+6,2012,Sugarbeets,0.003
+6,2013,Alfalfa,0.475
+6,2013,Winter Wheat,0.281
+6,2013,Barley,0.071
+6,2013,Potatoes,0.039
+6,2013,Corn,0.007
+6,2013,Oats,0.007
+6,2013,Fallow/Idle Cropland,0.003
+6,2014,Alfalfa,0.441
+6,2014,Corn,0.434
+6,2014,Sugarbeets,0.003
+6,2015,Alfalfa,0.435
+6,2015,Corn,0.42
+6,2015,Dry Beans,0.03
+6,2015,Fallow/Idle Cropland,0.006
+6,2016,Alfalfa,0.459
+6,2016,Winter Wheat,0.44
+6,2016,Barley,0.006
+6,2016,Oats,0.002
+6,2017,Corn,0.918
+6,2017,Alfalfa,0.003
+6,2018,Corn,0.89
+6,2018,Fallow/Idle Cropland,0.003
+7,2008,Alfalfa,0.77
+7,2008,Corn,0.072
+7,2008,Other Hay/Non Alfalfa,0.006
+7,2008,Fallow/Idle Cropland,0.005
+7,2008,Grass/Pasture,0.003
+7,2009,Alfalfa,0.76
+7,2009,Corn,0.101
+7,2009,Sugarbeets,0.007
+7,2009,Other Hay/Non Alfalfa,0.006
+7,2009,Grass/Pasture,0.004
+7,2009,Sod/Grass Seed,0.002
+7,2009,Open Water,0.002
+7,2010,Alfalfa,0.735
+7,2010,Dry Beans,0.027
+7,2010,Corn,0.02
+7,2010,Other Hay/Non Alfalfa,0.017
+7,2010,Barley,0.015
+7,2010,Grass/Pasture,0.006
+7,2010,Fallow/Idle Cropland,0.005
+7,2010,Sugarbeets,0.002
+7,2010,Spring Wheat,0.001
+7,2010,Triticale,0.001
+7,2011,Alfalfa,0.773
+7,2011,Sugarbeets,0.051
+7,2011,Other Hay/Non Alfalfa,0.03
+7,2011,Corn,0.015
+7,2012,Alfalfa,0.729
+7,2012,Corn,0.131
+7,2012,Other Hay/Non Alfalfa,0.007
+7,2013,Alfalfa,0.804
+7,2013,Corn,0.093
+7,2014,Corn,0.555
+7,2014,Alfalfa,0.262
+7,2014,Sugarbeets,0.071
+7,2015,Alfalfa,0.761
+7,2015,Corn,0.065
+7,2015,Sugarbeets,0.038
+7,2015,Sorghum,0.006
+7,2015,Fallow/Idle Cropland,0.002
+7,2015,Other Hay/Non Alfalfa,0.002
+7,2016,Alfalfa,0.778
+7,2016,Corn,0.046
+7,2016,Fallow/Idle Cropland,0.036
+7,2016,Dry Beans,0.006
+7,2016,Winter Wheat,0.002
+7,2016,Oats,0.002
+7,2016,Pumpkins,0.001
+7,2017,Alfalfa,0.808
+7,2017,Corn,0.072
+7,2018,Alfalfa,0.766
+7,2018,Corn,0.061
+7,2018,Other Hay/Non Alfalfa,0.013
+7,2018,Fallow/Idle Cropland,0.009
+8,2008,Winter Wheat,0.867
+8,2008,Alfalfa,0.014
+8,2008,Spring Wheat,0.012
+8,2008,Barley,0.01
+8,2008,Sod/Grass Seed,0.003
+8,2008,Corn,0.003
+8,2009,Corn,0.92
+8,2009,Alfalfa,0.003
+8,2010,Corn,0.831
+8,2010,Dry Beans,0.045
+8,2010,Alfalfa,0.014
+8,2010,Fallow/Idle Cropland,0.012
+8,2010,Other Hay/Non Alfalfa,0.003
+8,2010,Barley,0.002
+8,2010,Developed/Low Intensity,0.002
+8,2011,Corn,0.91
+8,2011,Alfalfa,0.008
+8,2011,Sugarbeets,0.003
+8,2011,Other Hay/Non Alfalfa,0.003
+8,2012,Alfalfa,0.775
+8,2012,Corn,0.043
+8,2012,Sugarbeets,0.026
+8,2012,Barley,0.01
+8,2012,Fallow/Idle Cropland,0.006
+8,2013,Alfalfa,0.875
+8,2013,Corn,0.012
+8,2013,Oats,0.006
+8,2014,Alfalfa,0.856
+8,2015,Alfalfa,0.862
+8,2015,Corn,0.006
+8,2015,Fallow/Idle Cropland,0.003
+8,2016,Alfalfa,0.869
+8,2016,Corn,0.003
+8,2017,Alfalfa,0.874
+8,2017,Corn,0.003
+8,2018,Alfalfa,0.848
+9,2008,Winter Wheat,0.767
+9,2008,Alfalfa,0.09
+9,2008,Barley,0.048
+9,2009,Corn,0.923
+9,2010,Corn,0.925
+9,2010,Sugarbeets,0.017
+9,2011,Corn,0.925
+9,2012,Corn,0.484
+9,2012,Dry Beans,0.247
+9,2013,Winter Wheat,0.863
+9,2014,Corn,0.846
+9,2014,Alfalfa,0.036
+9,2014,Fallow/Idle Cropland,0.019
+9,2015,Alfalfa,0.87
+9,2016,Alfalfa,0.872
+9,2017,Alfalfa,0.858
+9,2017,Corn,0.019
+9,2018,Alfalfa,0.848
+10,2008,Corn,0.663
+10,2008,Alfalfa,0.209
+10,2008,Sod/Grass Seed,0.004
+10,2008,Developed/Open Space,0.001
+10,2009,Alfalfa,0.849
+10,2009,Corn,0.012
+10,2009,Grass/Pasture,0.009
+10,2009,Other Hay/Non Alfalfa,0.003
+10,2009,Developed/Open Space,0.002
+10,2010,Alfalfa,0.622
+10,2010,Corn,0.216
+10,2010,Other Hay/Non Alfalfa,0.024
+10,2010,Fallow/Idle Cropland,0.004
+10,2010,Developed/Low Intensity,0.003
+10,2010,Grass/Pasture,0.002
+10,2010,Developed/Open Space,0.001
+10,2011,Alfalfa,0.64
+10,2011,Corn,0.227
+10,2011,Sugarbeets,0.011
+10,2011,Developed/Open Space,0.002
+10,2012,Alfalfa,0.647
+10,2012,Corn,0.102
+10,2012,Dry Beans,0.057
+10,2012,Sugarbeets,0.02
+10,2012,Developed/Open Space,0.003
+10,2013,Alfalfa,0.668
+10,2013,Winter Wheat,0.19
+10,2013,Fallow/Idle Cropland,0.022
+10,2013,Other Hay/Non Alfalfa,0.004
+10,2013,Developed/Open Space,0.003
+10,2014,Alfalfa,0.649
+10,2014,Corn,0.206
+10,2014,Sugarbeets,0.008
+10,2014,Developed/Open Space,0.003
+10,2015,Alfalfa,0.866
+10,2015,Developed/Open Space,0.003
+10,2016,Alfalfa,0.868
+10,2016,Developed/Open Space,0.003
+10,2017,Alfalfa,0.873
+10,2017,Developed/Open Space,0.002
+10,2018,Alfalfa,0.844
+10,2018,Developed/Open Space,0.002
+11,2008,Corn,0.834
+11,2008,Winter Wheat,0.023
+11,2008,Alfalfa,0.016
+11,2008,Other Hay/Non Alfalfa,0.002
+11,2008,Sorghum,0.002
+11,2008,Spring Wheat,0.002
+11,2008,Grass/Pasture,0.001
+11,2009,Dry Beans,0.456
+11,2009,Sunflower,0.152
+11,2009,Corn,0.087
+11,2009,Fallow/Idle Cropland,0.061
+11,2009,Sugarbeets,0.02
+11,2009,Grass/Pasture,0.018
+11,2009,Alfalfa,0.014
+11,2009,Millet,0.002
+11,2009,Sorghum,0.002
+11,2010,Barley,0.413
+11,2010,Winter Wheat,0.263
+11,2010,Alfalfa,0.054
+11,2010,Corn,0.021
+11,2010,Triticale,0.005
+11,2010,Fallow/Idle Cropland,0.003
+11,2010,Dry Beans,0.002
+11,2011,Corn,0.916
+11,2011,Dry Beans,0.004
+11,2011,Sugarbeets,0.003
+11,2012,Corn,0.851
+11,2012,Sugarbeets,0.02
+11,2012,Alfalfa,0.019
+11,2013,Corn,0.872
+11,2013,Alfalfa,0.031
+11,2013,Sugarbeets,0.005
+11,2014,Corn,0.848
+11,2014,Alfalfa,0.048
+11,2014,Fallow/Idle Cropland,0.003
+11,2015,Corn,0.886
+11,2015,Alfalfa,0.033
+11,2015,Sugarbeets,0.003
+11,2016,Corn,0.902
+11,2016,Alfalfa,0.03
+11,2017,Dry Beans,0.629
+11,2017,Corn,0.04
+11,2017,Alfalfa,0.027
+11,2017,Sorghum,0.002
+11,2017,Other Hay/Non Alfalfa,0.002
+11,2018,Winter Wheat,0.848
+11,2018,Alfalfa,0.048
+11,2018,Fallow/Idle Cropland,0.008
+11,2018,Corn,0.003
+12,2008,Winter Wheat,0.874
+12,2008,Barley,0.04
+12,2009,Corn,0.911
+12,2009,Alfalfa,0.011
+12,2010,Alfalfa,0.407
+12,2010,Corn,0.23
+12,2010,Other Hay/Non Alfalfa,0.104
+12,2010,Oats,0.067
+12,2010,Herbaceous Wetlands,0.001
+12,2011,Alfalfa,0.869
+12,2012,Alfalfa,0.862
+12,2013,Alfalfa,0.895
+12,2014,Alfalfa,0.856
+12,2015,Alfalfa,0.87
+12,2016,Corn,0.85
+12,2016,Alfalfa,0.078
+12,2017,Corn,0.921
+12,2018,Corn,0.894
+13,2008,Alfalfa,0.832
+13,2008,Corn,0.029
+13,2008,Winter Wheat,0.006
+13,2009,Alfalfa,0.877
+13,2009,Corn,0.006
+13,2010,Corn,0.908
+13,2010,Fallow/Idle Cropland,0.012
+13,2010,Sugarbeets,0.005
+13,2010,Sorghum,0.005
+13,2010,Open Water,0.005
+13,2010,Barley,0.005
+13,2011,Corn,0.889
+13,2011,Alfalfa,0.034
+13,2012,Corn,0.847
+13,2012,Alfalfa,0.045
+13,2013,Corn,0.874
+13,2013,Alfalfa,0.035
+13,2014,Corn,0.82
+13,2014,Alfalfa,0.078
+13,2015,Corn,0.858
+13,2015,Alfalfa,0.051
+13,2015,Fallow/Idle Cropland,0.011
+13,2016,Dry Beans,0.483
+13,2016,Corn,0.224
+13,2016,Alfalfa,0.074
+13,2016,Sugarbeets,0.012
+13,2016,Fallow/Idle Cropland,0.006
+13,2016,Sorghum,0.005
+13,2016,Pumpkins,0.002
+13,2017,Winter Wheat,0.829
+13,2017,Corn,0.036
+13,2017,Alfalfa,0.034
+13,2017,Barley,0.005
+13,2018,Corn,0.882
+13,2018,Fallow/Idle Cropland,0.006
+13,2018,Other Hay/Non Alfalfa,0.005
+14,2008,Winter Wheat,0.417
+14,2008,Fallow/Idle Cropland,0.385
+14,2008,Grass/Pasture,0.011
+14,2008,Developed/Open Space,0.006
+14,2008,Spring Wheat,0.001
+14,2008,Sorghum,0.0
+14,2009,Fallow/Idle Cropland,0.622
+14,2009,Grass/Pasture,0.101
+14,2009,Sunflower,0.048
+14,2009,Winter Wheat,0.029
+14,2009,Developed/Open Space,0.016
+14,2009,Millet,0.002
+14,2009,Dry Beans,0.001
+14,2010,Fallow/Idle Cropland,0.421
+14,2010,Winter Wheat,0.357
+14,2010,Grass/Pasture,0.043
+14,2010,Barley,0.015
+14,2010,Developed/Open Space,0.013
+14,2010,Alfalfa,0.006
+14,2010,Other Hay/Non Alfalfa,0.002
+14,2010,Oats,0.002
+14,2010,Dry Beans,0.001
+14,2010,Triticale,0.0
+14,2011,Fallow/Idle Cropland,0.358
+14,2011,Winter Wheat,0.271
+14,2011,Grass/Pasture,0.109
+14,2011,Developed/Open Space,0.016
+14,2011,Other Hay/Non Alfalfa,0.007
+14,2011,Barley,0.005
+14,2011,Dry Beans,0.002
+14,2011,Millet,0.001
+14,2012,Fallow/Idle Cropland,0.727
+14,2012,Winter Wheat,0.058
+14,2012,Developed/Open Space,0.026
+14,2012,Grass/Pasture,0.023
+14,2012,Corn,0.008
+14,2012,Millet,0.006
+14,2012,Triticale,0.004
+14,2013,Winter Wheat,0.433
+14,2013,Corn,0.216
+14,2013,Sugarbeets,0.045
+14,2013,Alfalfa,0.042
+14,2013,Fallow/Idle Cropland,0.037
+14,2013,Developed/Open Space,0.025
+14,2013,Grass/Pasture,0.016
+14,2013,Millet,0.013
+14,2013,Other Hay/Non Alfalfa,0.006
+14,2013,Dry Beans,0.005
+14,2013,Oats,0.005
+14,2013,Barley,0.004
+14,2013,Sorghum,0.002
+14,2013,Herbaceous Wetlands,0.0
+14,2013,Triticale,0.0
+14,2014,Fallow/Idle Cropland,0.806
+14,2014,Developed/Open Space,0.026
+14,2014,Corn,0.021
+14,2014,Grass/Pasture,0.012
+14,2014,Alfalfa,0.007
+14,2014,Other Hay/Non Alfalfa,0.003
+14,2014,Winter Wheat,0.002
+14,2014,Sorghum,0.001
+14,2014,Woody Wetlands,0.0
+14,2014,Dbl Crop WinWht/Corn,0.0
+14,2015,Fallow/Idle Cropland,0.362
+14,2015,Winter Wheat,0.348
+14,2015,Other Hay/Non Alfalfa,0.071
+14,2015,Developed/Open Space,0.033
+14,2015,Alfalfa,0.024
+14,2015,Grass/Pasture,0.015
+14,2015,Corn,0.004
+14,2015,Shrubland,0.001
+14,2016,Fallow/Idle Cropland,0.846
+14,2016,Developed/Open Space,0.034
+14,2016,Grass/Pasture,0.015
+14,2016,Other Hay/Non Alfalfa,0.005
+14,2017,Fallow/Idle Cropland,0.426
+14,2017,Other Hay/Non Alfalfa,0.323
+14,2017,Winter Wheat,0.028
+14,2017,Developed/Open Space,0.021
+14,2017,Grass/Pasture,0.014
+14,2017,Alfalfa,0.013
+14,2018,Fallow/Idle Cropland,0.435
+14,2018,Other Hay/Non Alfalfa,0.298
+14,2018,Developed/Open Space,0.02
+14,2018,Grass/Pasture,0.012
+14,2018,Alfalfa,0.012
+14,2018,Winter Wheat,0.001
+14,2018,Shrubland,0.001
+15,2008,Alfalfa,0.855
+15,2008,Sod/Grass Seed,0.006
+15,2008,Grass/Pasture,0.001
+15,2009,Alfalfa,0.878
+15,2009,Grass/Pasture,0.003
+15,2010,Corn,0.888
+15,2010,Dry Beans,0.013
+15,2010,Fallow/Idle Cropland,0.005
+15,2010,Alfalfa,0.005
+15,2010,Grass/Pasture,0.003
+15,2010,Herbaceous Wetlands,0.002
+15,2011,Corn,0.92
+15,2011,Herbaceous Wetlands,0.001
+15,2012,Winter Wheat,0.792
+15,2012,Alfalfa,0.092
+15,2012,Barley,0.023
+15,2012,Corn,0.005
+15,2012,Other Hay/Non Alfalfa,0.005
+15,2012,Herbaceous Wetlands,0.003
+15,2013,Corn,0.904
+15,2013,Other Hay/Non Alfalfa,0.005
+15,2014,Corn,0.865
+15,2014,Alfalfa,0.031
+15,2014,Fallow/Idle Cropland,0.005
+15,2015,Corn,0.869
+15,2015,Dry Beans,0.042
+15,2015,Sorghum,0.005
+15,2016,Winter Wheat,0.873
+15,2016,Corn,0.044
+15,2016,Dry Beans,0.018
+15,2016,Fallow/Idle Cropland,0.005
+15,2016,Sugarbeets,0.005
+15,2017,Corn,0.795
+15,2017,Alfalfa,0.057
+15,2017,Winter Wheat,0.048
+15,2017,Barley,0.014
+15,2018,Winter Wheat,0.369
+15,2018,Barley,0.31
+15,2018,Alfalfa,0.071
+15,2018,Corn,0.069
+15,2018,Fallow/Idle Cropland,0.025
+15,2018,Other Hay/Non Alfalfa,0.017
+16,2008,Grass/Pasture,0.159
+16,2008,Other Hay/Non Alfalfa,0.031
+16,2009,Grass/Pasture,0.52
+16,2009,Other Hay/Non Alfalfa,0.003
+16,2010,Grass/Pasture,0.424
+16,2010,Fallow/Idle Cropland,0.063
+16,2010,Other Hay/Non Alfalfa,0.02
+16,2010,Winter Wheat,0.002
+16,2010,Herbaceous Wetlands,0.002
+16,2010,Barley,0.001
+16,2011,Grass/Pasture,0.394
+16,2011,Fallow/Idle Cropland,0.064
+16,2011,Other Hay/Non Alfalfa,0.021
+16,2011,Barley,0.006
+16,2011,Winter Wheat,0.002
+16,2011,Herbaceous Wetlands,0.001
+16,2012,Grass/Pasture,0.569
+16,2012,Other Hay/Non Alfalfa,0.079
+16,2012,Fallow/Idle Cropland,0.027
+16,2012,Winter Wheat,0.007
+16,2012,Alfalfa,0.002
+16,2012,Herbaceous Wetlands,0.001
+16,2013,Grass/Pasture,0.557
+16,2013,Other Hay/Non Alfalfa,0.042
+16,2013,Winter Wheat,0.005
+16,2013,Fallow/Idle Cropland,0.003
+16,2013,Herbaceous Wetlands,0.001
+16,2014,Grass/Pasture,0.641
+16,2014,Fallow/Idle Cropland,0.043
+16,2014,Other Hay/Non Alfalfa,0.037
+16,2014,Shrubland,0.015
+16,2014,Winter Wheat,0.002
+16,2014,Pumpkins,0.001
+16,2015,Grass/Pasture,0.83
+16,2015,Fallow/Idle Cropland,0.029
+16,2015,Herbaceous Wetlands,0.003
+16,2016,Grass/Pasture,0.85
+16,2016,Fallow/Idle Cropland,0.032
+16,2016,Shrubland,0.003
+16,2016,Other Hay/Non Alfalfa,0.001
+16,2017,Grass/Pasture,0.799
+16,2017,Fallow/Idle Cropland,0.038
+16,2017,Other Hay/Non Alfalfa,0.029
+16,2017,Herbaceous Wetlands,0.002
+16,2017,Barren,0.002
+16,2018,Grass/Pasture,0.83
+16,2018,Fallow/Idle Cropland,0.023
+16,2018,Other Hay/Non Alfalfa,0.022
+16,2018,Winter Wheat,0.007
+16,2018,Shrubland,0.005
+16,2018,Herbaceous Wetlands,0.002
+16,2018,Rye,0.001
+17,2008,Other Hay/Non Alfalfa,0.338
+17,2008,Grass/Pasture,0.073
+17,2008,Alfalfa,0.034
+17,2008,Fallow/Idle Cropland,0.029
+17,2008,Sod/Grass Seed,0.026
+17,2008,Winter Wheat,0.005
+17,2009,Winter Wheat,0.408
+17,2009,Other Hay/Non Alfalfa,0.264
+17,2009,Grass/Pasture,0.07
+17,2009,Alfalfa,0.059
+17,2009,Fallow/Idle Cropland,0.031
+17,2009,Barley,0.01
+17,2010,Other Hay/Non Alfalfa,0.672
+17,2010,Alfalfa,0.072
+17,2010,Grass/Pasture,0.021
+17,2010,Corn,0.011
+17,2010,Barley,0.008
+17,2010,Winter Wheat,0.005
+17,2010,Herbaceous Wetlands,0.001
+17,2011,Winter Wheat,0.401
+17,2011,Other Hay/Non Alfalfa,0.203
+17,2011,Alfalfa,0.097
+17,2011,Grass/Pasture,0.092
+17,2011,Fallow/Idle Cropland,0.01
+17,2012,Other Hay/Non Alfalfa,0.381
+17,2012,Grass/Pasture,0.278
+17,2012,Fallow/Idle Cropland,0.078
+17,2012,Alfalfa,0.024
+17,2012,Herbaceous Wetlands,0.001
+17,2013,Other Hay/Non Alfalfa,0.434
+17,2013,Grass/Pasture,0.265
+17,2013,Winter Wheat,0.039
+17,2013,Alfalfa,0.01
+17,2013,Herbaceous Wetlands,0.003
+17,2014,Other Hay/Non Alfalfa,0.643
+17,2014,Grass/Pasture,0.125
+17,2014,Fallow/Idle Cropland,0.045
+17,2014,Alfalfa,0.024
+17,2015,Grass/Pasture,0.445
+17,2015,Other Hay/Non Alfalfa,0.29
+17,2015,Alfalfa,0.039
+17,2015,Winter Wheat,0.026
+17,2015,Barley,0.01
+17,2015,Fallow/Idle Cropland,0.005
+17,2016,Other Hay/Non Alfalfa,0.408
+17,2016,Grass/Pasture,0.302
+17,2016,Alfalfa,0.034
+17,2016,Fallow/Idle Cropland,0.03
+17,2016,Winter Wheat,0.021
+17,2016,Herbaceous Wetlands,0.002
+17,2017,Grass/Pasture,0.469
+17,2017,Alfalfa,0.255
+17,2017,Other Hay/Non Alfalfa,0.126
+17,2017,Fallow/Idle Cropland,0.01
+17,2018,Other Hay/Non Alfalfa,0.286
+17,2018,Grass/Pasture,0.236
+17,2018,Alfalfa,0.213
+17,2018,Corn,0.03
+17,2018,Shrubland,0.02
+17,2018,Fallow/Idle Cropland,0.019
+17,2018,Herbaceous Wetlands,0.003
+18,2008,Fallow/Idle Cropland,0.476
+18,2008,Winter Wheat,0.389
+18,2008,Grass/Pasture,0.003
+18,2008,Developed/Open Space,0.002
+18,2008,Sorghum,0.001
+18,2008,Spring Wheat,0.001
+18,2009,Fallow/Idle Cropland,0.704
+18,2009,Winter Wheat,0.193
+18,2009,Grass/Pasture,0.008
+18,2009,Developed/Open Space,0.004
+18,2009,Other Hay/Non Alfalfa,0.003
+18,2009,Barley,0.002
+18,2009,Alfalfa,0.001
+18,2010,Winter Wheat,0.465
+18,2010,Fallow/Idle Cropland,0.393
+18,2010,Grass/Pasture,0.019
+18,2010,Barley,0.016
+18,2010,Developed/Open Space,0.004
+18,2010,Other Hay/Non Alfalfa,0.003
+18,2010,Triticale,0.001
+18,2011,Fallow/Idle Cropland,0.47
+18,2011,Winter Wheat,0.373
+18,2011,Grass/Pasture,0.018
+18,2011,Other Hay/Non Alfalfa,0.014
+18,2011,Developed/Open Space,0.006
+18,2011,Barley,0.001
+18,2012,Winter Wheat,0.35
+18,2012,Fallow/Idle Cropland,0.319
+18,2012,Grass/Pasture,0.164
+18,2012,Developed/Open Space,0.009
+18,2012,Barley,0.001
+18,2012,Triticale,0.001
+18,2013,Winter Wheat,0.457
+18,2013,Fallow/Idle Cropland,0.385
+18,2013,Developed/Open Space,0.008
+18,2013,Grass/Pasture,0.006
+18,2013,Other Hay/Non Alfalfa,0.001
+18,2014,Fallow/Idle Cropland,0.439
+18,2014,Winter Wheat,0.426
+18,2014,Other Hay/Non Alfalfa,0.014
+18,2014,Developed/Open Space,0.008
+18,2014,Dbl Crop WinWht/Corn,0.004
+18,2014,Grass/Pasture,0.003
+18,2014,Triticale,0.001
+18,2014,Other Crops,0.0
+18,2015,Fallow/Idle Cropland,0.527
+18,2015,Winter Wheat,0.325
+18,2015,Developed/Open Space,0.012
+18,2015,Grass/Pasture,0.002
+18,2016,Winter Wheat,0.58
+18,2016,Fallow/Idle Cropland,0.288
+18,2016,Other Hay/Non Alfalfa,0.036
+18,2016,Developed/Open Space,0.012
+18,2016,Barley,0.005
+18,2016,Grass/Pasture,0.002
+18,2016,Corn,0.001
+18,2017,Fallow/Idle Cropland,0.462
+18,2017,Winter Wheat,0.4
+18,2017,Developed/Open Space,0.007
+18,2017,Millet,0.007
+18,2017,Other Hay/Non Alfalfa,0.004
+18,2017,Alfalfa,0.002
+18,2017,Grass/Pasture,0.002
+18,2017,Corn,0.001
+18,2017,Oats,0.0
+18,2018,Winter Wheat,0.548
+18,2018,Fallow/Idle Cropland,0.311
+18,2018,Developed/Open Space,0.007
+18,2018,Other Hay/Non Alfalfa,0.006
+18,2018,Triticale,0.004
+18,2018,Grass/Pasture,0.002
+18,2018,Rye,0.002
+19,2008,Winter Wheat,0.395
+19,2008,Corn,0.253
+19,2008,Alfalfa,0.247
+19,2009,Alfalfa,0.757
+19,2009,Grass/Pasture,0.075
+19,2010,Corn,0.945
+19,2011,Alfalfa,0.745
+19,2011,Corn,0.132
+19,2012,Corn,0.51
+19,2012,Alfalfa,0.246
+19,2012,Other Hay/Non Alfalfa,0.119
+19,2013,Alfalfa,0.895
+19,2014,Alfalfa,0.734
+19,2014,Corn,0.129
+19,2015,Corn,0.396
+19,2015,Alfalfa,0.373
+19,2015,Fallow/Idle Cropland,0.12
+19,2016,Corn,0.4
+19,2016,Alfalfa,0.374
+19,2016,Dry Beans,0.109
+19,2017,Alfalfa,0.751
+19,2017,Winter Wheat,0.129
+19,2018,Alfalfa,0.727
+19,2018,Corn,0.128
+20,2008,Winter Wheat,0.897
+20,2008,Fallow/Idle Cropland,0.011
+20,2008,Developed/Open Space,0.002
+20,2009,Fallow/Idle Cropland,0.826
+20,2009,Other Hay/Non Alfalfa,0.074
+20,2009,Winter Wheat,0.012
+20,2010,Winter Wheat,0.509
+20,2010,Barley,0.269
+20,2010,Fallow/Idle Cropland,0.036
+20,2010,Developed/Open Space,0.004
+20,2010,Triticale,0.003
+20,2011,Fallow/Idle Cropland,0.666
+20,2011,Winter Wheat,0.159
+20,2011,Grass/Pasture,0.029
+20,2011,Developed/Open Space,0.005
+20,2012,Winter Wheat,0.641
+20,2012,Barley,0.229
+20,2012,Grass/Pasture,0.009
+20,2012,Developed/Open Space,0.008
+20,2013,Fallow/Idle Cropland,0.784
+20,2013,Grass/Pasture,0.038
+20,2013,Winter Wheat,0.011
+20,2013,Developed/Open Space,0.008
+20,2014,Winter Wheat,0.881
+20,2014,Fallow/Idle Cropland,0.035
+20,2014,Developed/Open Space,0.008
+20,2014,Dbl Crop WinWht/Corn,0.003
+20,2015,Other Hay/Non Alfalfa,0.399
+20,2015,Corn,0.252
+20,2015,Alfalfa,0.136
+20,2015,Fallow/Idle Cropland,0.011
+20,2015,Developed/Open Space,0.01
+20,2016,Alfalfa,0.792
+20,2016,Other Hay/Non Alfalfa,0.047
+20,2016,Winter Wheat,0.012
+20,2016,Developed/Open Space,0.011
+20,2017,Alfalfa,0.843
+20,2017,Fallow/Idle Cropland,0.011
+20,2017,Other Hay/Non Alfalfa,0.01
+20,2017,Developed/Open Space,0.007
+20,2018,Alfalfa,0.815
+20,2018,Winter Wheat,0.012
+20,2018,Other Hay/Non Alfalfa,0.009
+20,2018,Developed/Open Space,0.006
+21,2008,Winter Wheat,0.631
+21,2008,Corn,0.101
+21,2008,Fallow/Idle Cropland,0.1
+21,2008,Triticale,0.016
+21,2008,Grass/Pasture,0.005
+21,2008,Developed/Open Space,0.004
+21,2009,Fallow/Idle Cropland,0.764
+21,2009,Winter Wheat,0.054
+21,2009,Alfalfa,0.05
+21,2009,Grass/Pasture,0.015
+21,2009,Developed/Open Space,0.013
+21,2010,Barley,0.388
+21,2010,Alfalfa,0.098
+21,2010,Winter Wheat,0.055
+21,2010,Corn,0.054
+21,2010,Grass/Pasture,0.041
+21,2010,Dry Beans,0.031
+21,2010,Fallow/Idle Cropland,0.026
+21,2010,Other Hay/Non Alfalfa,0.023
+21,2010,Developed/Open Space,0.009
+21,2011,Fallow/Idle Cropland,0.733
+21,2011,Corn,0.079
+21,2011,Grass/Pasture,0.025
+21,2011,Developed/Open Space,0.011
+21,2012,Fallow/Idle Cropland,0.373
+21,2012,Winter Wheat,0.299
+21,2012,Triticale,0.076
+21,2012,Corn,0.026
+21,2012,Sugarbeets,0.023
+21,2012,Developed/Open Space,0.018
+21,2013,Fallow/Idle Cropland,0.641
+21,2013,Winter Wheat,0.173
+21,2013,Grass/Pasture,0.017
+21,2013,Developed/Open Space,0.017
+21,2014,Winter Wheat,0.538
+21,2014,Alfalfa,0.22
+21,2014,Fallow/Idle Cropland,0.051
+21,2014,Other Hay/Non Alfalfa,0.049
+21,2014,Grass/Pasture,0.021
+21,2014,Developed/Open Space,0.018
+21,2015,Fallow/Idle Cropland,0.598
+21,2015,Corn,0.237
+21,2015,Developed/Open Space,0.023
+21,2016,Winter Wheat,0.844
+21,2016,Corn,0.027
+21,2016,Fallow/Idle Cropland,0.026
+21,2016,Developed/Open Space,0.023
+21,2016,Barley,0.021
+21,2017,Fallow/Idle Cropland,0.657
+21,2017,Corn,0.184
+21,2017,Alfalfa,0.025
+21,2017,Developed/Open Space,0.014
+21,2018,Winter Wheat,0.651
+21,2018,Corn,0.128
+21,2018,Fallow/Idle Cropland,0.049
+21,2018,Alfalfa,0.024
+21,2018,Rye,0.02
+21,2018,Developed/Open Space,0.014
+22,2008,Winter Wheat,0.844
+22,2008,Fallow/Idle Cropland,0.037
+22,2008,Corn,0.025
+22,2008,Grass/Pasture,0.002
+22,2009,Fallow/Idle Cropland,0.78
+22,2009,Winter Wheat,0.033
+22,2009,Triticale,0.021
+22,2009,Sunflower,0.016
+22,2009,Grass/Pasture,0.015
+22,2009,Corn,0.013
+22,2009,Alfalfa,0.012
+22,2009,Barley,0.006
+22,2009,Dry Beans,0.006
+22,2010,Winter Wheat,0.488
+22,2010,Barley,0.285
+22,2010,Alfalfa,0.024
+22,2010,Corn,0.013
+22,2010,Dry Beans,0.008
+22,2010,Grass/Pasture,0.007
+22,2010,Triticale,0.002
+22,2011,Corn,0.479
+22,2011,Fallow/Idle Cropland,0.198
+22,2011,Winter Wheat,0.152
+22,2011,Grass/Pasture,0.04
+22,2011,Dry Beans,0.004
+22,2012,Fallow/Idle Cropland,0.286
+22,2012,Corn,0.219
+22,2012,Dry Beans,0.125
+22,2012,Sugarbeets,0.061
+22,2012,Winter Wheat,0.046
+22,2012,Triticale,0.022
+22,2012,Other Hay/Non Alfalfa,0.012
+22,2012,Alfalfa,0.006
+22,2013,Winter Wheat,0.537
+22,2013,Fallow/Idle Cropland,0.29
+22,2013,Sugarbeets,0.018
+22,2013,Millet,0.012
+22,2013,Grass/Pasture,0.004
+22,2014,Fallow/Idle Cropland,0.499
+22,2014,Winter Wheat,0.356
+22,2014,Alfalfa,0.03
+22,2014,Corn,0.013
+22,2014,Grass/Pasture,0.005
+22,2014,Dry Beans,0.005
+22,2015,Alfalfa,0.45
+22,2015,Fallow/Idle Cropland,0.328
+22,2015,Corn,0.077
+22,2015,Triticale,0.004
+22,2016,Alfalfa,0.469
+22,2016,Winter Wheat,0.38
+22,2016,Fallow/Idle Cropland,0.038
+22,2016,Corn,0.02
+22,2017,Alfalfa,0.503
+22,2017,Fallow/Idle Cropland,0.272
+22,2017,Corn,0.045
+22,2017,Dry Beans,0.019
+22,2017,Winter Wheat,0.019
+22,2017,Other Hay/Non Alfalfa,0.011
+22,2017,Sorghum,0.005
+22,2018,Alfalfa,0.504
+22,2018,Winter Wheat,0.299
+22,2018,Corn,0.038
+22,2018,Fallow/Idle Cropland,0.012
+22,2018,Other Hay/Non Alfalfa,0.01
+22,2018,Sugarbeets,0.006
+23,2008,Other Hay/Non Alfalfa,0.379
+23,2008,Grass/Pasture,0.076
+23,2008,Fallow/Idle Cropland,0.018
+23,2008,Developed/Open Space,0.002
+23,2009,Grass/Pasture,0.488
+23,2009,Other Hay/Non Alfalfa,0.03
+23,2009,Fallow/Idle Cropland,0.011
+23,2009,Developed/Open Space,0.007
+23,2010,Grass/Pasture,0.335
+23,2010,Other Hay/Non Alfalfa,0.195
+23,2010,Fallow/Idle Cropland,0.007
+23,2010,Developed/Open Space,0.005
+23,2010,Herbaceous Wetlands,0.004
+23,2011,Grass/Pasture,0.325
+23,2011,Other Hay/Non Alfalfa,0.13
+23,2011,Fallow/Idle Cropland,0.021
+23,2011,Herbaceous Wetlands,0.008
+23,2011,Developed/Open Space,0.006
+23,2011,Alfalfa,0.004
+23,2012,Triticale,0.425
+23,2012,Alfalfa,0.017
+23,2012,Developed/Open Space,0.01
+23,2012,Fallow/Idle Cropland,0.004
+23,2013,Grass/Pasture,0.473
+23,2013,Other Hay/Non Alfalfa,0.137
+23,2013,Winter Wheat,0.028
+23,2013,Developed/Open Space,0.01
+23,2014,Other Hay/Non Alfalfa,0.291
+23,2014,Grass/Pasture,0.274
+23,2014,Fallow/Idle Cropland,0.198
+23,2014,Alfalfa,0.01
+23,2014,Developed/Open Space,0.01
+23,2014,Rye,0.008
+23,2015,Grass/Pasture,0.335
+23,2015,Oats,0.152
+23,2015,Other Hay/Non Alfalfa,0.062
+23,2015,Winter Wheat,0.056
+23,2015,Fallow/Idle Cropland,0.044
+23,2015,Alfalfa,0.018
+23,2015,Developed/Open Space,0.013
+23,2015,Corn,0.011
+23,2015,Herbaceous Wetlands,0.002
+23,2016,Fallow/Idle Cropland,0.551
+23,2016,Corn,0.166
+23,2016,Other Hay/Non Alfalfa,0.074
+23,2016,Grass/Pasture,0.064
+23,2016,Dry Beans,0.015
+23,2016,Developed/Open Space,0.013
+23,2016,Shrubland,0.003
+23,2017,Other Hay/Non Alfalfa,0.298
+23,2017,Grass/Pasture,0.187
+23,2017,Alfalfa,0.099
+23,2017,Corn,0.097
+23,2017,Fallow/Idle Cropland,0.082
+23,2017,Sugarbeets,0.035
+23,2017,Winter Wheat,0.015
+23,2017,Developed/Open Space,0.008
+23,2017,Herbaceous Wetlands,0.005
+23,2017,Oats,0.001
+23,2018,Fallow/Idle Cropland,0.379
+23,2018,Other Hay/Non Alfalfa,0.178
+23,2018,Grass/Pasture,0.083
+23,2018,Alfalfa,0.079
+23,2018,Winter Wheat,0.029
+23,2018,Oats,0.025
+23,2018,Corn,0.014
+23,2018,Developed/Open Space,0.008
+23,2018,Herbaceous Wetlands,0.004
+23,2018,Millet,0.003

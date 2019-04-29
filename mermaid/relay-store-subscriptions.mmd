@@ -1,0 +1,35 @@
+
+sequenceDiagram
+
+    # relay->gql->store->datastore->cb->store
+
+
+    Participant u as user
+    Participant nw as nori-website
+    Participant rs as Relay Store
+    Participant ng as nori-graphql
+    Participant ns as nori-sendgrid
+    Participant ds as DataStore
+
+    # supplier registration
+    u->>nw: do something in UI
+    par
+      nw->>rs: call mutation
+      rs->>rs: update relay store with job
+      nw->>ng: trigger ds update
+    end
+      ng->>ds: update ds
+    ds->>ng: callback with updated datastore
+    par
+      ng->>nw: update ui
+      ng->>rs: notify store (if any)
+      rs->>rs: trigger jobs in store (if any)
+    end
+
+
+
+
+
+
+
+

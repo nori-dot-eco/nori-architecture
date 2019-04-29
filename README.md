@@ -36,7 +36,7 @@ Or [do it live here](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJj
 ### Create the diagram image
 
 ```bash
-npm run generate
+yarn run generate
 ```
 
 This will out put the diagram into the `diagrams/` folder.

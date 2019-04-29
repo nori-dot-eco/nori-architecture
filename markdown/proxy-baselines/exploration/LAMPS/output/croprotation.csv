@@ -1,0 +1,20 @@
+@T, rot
+name, croprotation.csv
+descr, crop rotation input parameter
+# crop rotation information
+# Mon Apr 15 17:46:18 MDT 2019
+# RID = Rotation ID
+# MID = Management ID
+# LAMPS provided information
+ 
+@H,RID,MID
+,1,10
+,2,11
+,3,12
+,4,13
+,5,14
+,6,15
+,7,16
+,8,17
+,9,18
+,10,19
