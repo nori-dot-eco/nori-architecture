@@ -4,7 +4,7 @@ More about LAMPS [can be found here](https://alm.engr.colostate.edu/cb/item/1358
 
 ## Example usage
 
-[Preview the kmz (as a geojson) that was used here](https://gist.github.com/jaycenhorton/1390ebc1f94bb76861f35f9767027b6d)
+[Preview the kmz (as a geojson) that was used here](./input/map.geojson)
 
 ### Using curl
 
