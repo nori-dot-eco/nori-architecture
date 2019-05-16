@@ -1,40 +1,40 @@
 {
-    "metainfo": {
-        "keep_workspace": true
+  "metainfo": {
+    "keep_workspace": true
+  },
+  "parameter": [
+    {
+      "name": "geometry",
+      "description": "geometry / polygon information file; .shp / .kmz / .kml / .geojson (required)",
+      "value": "Harborview.kmz"
     },
-    "parameter": [
-        {
-            "name": "geometry",
-            "description": "geometry / polygon information file; .shp / .kmz / .kml / .geojson (required)",
-            "value": "map.kmz"
-        },
-        {
-            "name": "delta",
-            "description": "delta factor to adjust the possible crop rotation order in the matching list (optional)",
-            "min": "0.0",
-            "max": "0.9",
-            "value": "0.15"
-        },
-        {
-            "name": "start_year",
-            "description": "to generate an user-selected time period with the matching crop rotation; Start Year (optional)",
-            "min": "2000",
-            "max": "2100",
-            "value": "2000"
-        },
-        {
-            "name": "end_year",
-            "description": "to generate an user-selected time period with the matching crop rotation; End Year (optional)",
-            "min": "2001",
-            "max": "2101",
-            "value": "2014"
-        },
-        {
-            "name": "ages_files",
-            "description": "AgES-W input file generation (optional)",
-            "min": "FALSE",
-            "max": "TRUE",
-            "value": "TRUE"
-        }
-    ]
+    {
+      "name": "delta",
+      "description": "delta factor to adjust the possible crop rotation order in the matching list (optional)",
+      "min": "0.0",
+      "max": "0.9",
+      "value": "0.15"
+    },
+    {
+      "name": "start_year",
+      "description": "to generate an user-selected time period with the matching crop rotation; Start Year (optional)",
+      "min": "2000",
+      "max": "2100",
+      "value": "2000"
+    },
+    {
+      "name": "end_year",
+      "description": "to generate an user-selected time period with the matching crop rotation; End Year (optional)",
+      "min": "2001",
+      "max": "2101",
+      "value": "2014"
+    },
+    {
+      "name": "ages_files",
+      "description": "AgES-W input file generation (optional)",
+      "min": "FALSE",
+      "max": "TRUE",
+      "value": "TRUE"
+    }
+  ]
 }
