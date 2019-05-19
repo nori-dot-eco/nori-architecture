@@ -1,0 +1,69 @@
+sequenceDiagram
+    # participant definitions
+    Participant n as Nori
+    Participant t as Timer
+    Participant s as Supplier
+    Participant b as Buyer
+    Participant a as /app
+    Participant ad as /admin
+    Participant pk as EntPrivateKey
+    Participant auction as EntAuction
+    Participant offer as EntOffer
+    Participant bid as EntBid
+    Participant fwd as EntForwardContract
+    Participant pending as EntPendingTx
+    Participant e as Forward Smart Contract
+
+    # Nori admin creates auction
+    n ->> t: trigger
+    t ->> ad: Create Auction
+    ad ->> auction: create
+    auction ->> a: displays new auction
+
+    # supplier auction entrance
+    s ->> a: Create Listing
+    a ->> offer: create
+    par
+      offer ->> auction: link
+      pk ->> pending: create
+      pk ->> e: create tx
+    end
+    auction ->> a: show in supplier's UI
+    e ->> pending: delete
+
+
+    # buyer auction entrance
+    b ->> a: Place bid
+    a ->> offer: create
+    par
+      offer ->> auction: link
+      pk ->> pending: create
+      pk ->> e: create tx
+    end
+    auction ->> a: show in buyer's UI
+    e ->> pending: delete
+
+    # settling the auction
+    t ->> auction: done
+    auction ->> fwd: create
+    par
+      fwd ->> bid: get bids
+      fwd ->> offer: get offers
+    end
+    fwd ->> e: finalize and swap tokens
+    e ->> pk: give tokens
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

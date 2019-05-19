@@ -46,6 +46,54 @@ package GCP <<Cloud>> {
   }
 
   package DataStore <<Rectangle>> {
+
+    class BuyerProfile {
+      -id
+      -timeCreated
+      -timeUpdated
+    }
+
+    class SupplierProfile {
+      -id
+      -timeCreated
+      -timeUpdated
+    }
+
+    class Bid {
+      -id
+      -auctionId
+      -timeCreated
+      -timeUpdated
+      -price
+      -quantity
+    }
+
+    class Offer {
+      -id
+      -auctionId
+      -timeCreated
+      -timeUpdated
+      -price
+      -quantity
+    }
+
+    class Auction {
+      -id
+      -timeCreated
+      -timeUpdated
+      -startTime
+      -endTime
+    }
+
+    class ForwardContract {
+      -auctionId
+      -id
+      -timeCreated
+      -timeUpdated
+      -bidId
+      -offerId
+    }
+
     class CRCData {
       -id
       -timeCreated
@@ -290,12 +338,27 @@ package "/app/supplier/project-page?projectId=supplierProjectKey" <<Rectangle>> 
 }
 
 
+
+
 UserProfile o-- SupplierProject
 UserProfile o-- ContactInformation
 
 ContactInformation .. Contacts
 
 User o-- UserProfile
+
+User o-- SupplierProfile
+User o-- BuyerProfile
+
+SupplierProfile o-- Offer
+BuyerProfile o-- Bid
+
+Auction o-- Bid
+Auction o-- Offer
+
+ForwardContract o-- Auction
+ForwardContract o-- Bid
+ForwardContract o-- Offer
 
 SupplierProjectCometReport .. "CRC Estimate"
 
