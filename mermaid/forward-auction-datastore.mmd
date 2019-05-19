@@ -1,0 +1,106 @@
+sequenceDiagram
+    # participant definitions
+    Participant s as Supplier
+    Participant b as Buyer
+    Participant a as /app
+    Participant pk as EntPrivateKey
+    Participant etx as EntCommittedTxs
+    Participant crc as CRC Contract
+    Participant nt as Nori Token Contract
+    Participant ac as Auctioneer Contract
+    Participant fwd as Forward Market Contract
+
+
+
+    # supplier mints CRCs
+    s ->> a: create 100 crcs
+    a->>etx: commitTx({txType:"mint", amount:100, kind:"CRC", from:s.address,to:s.address})
+
+    # supplier makes an offer in the forward market
+    s->>a: create a 100 crc forward contract offer
+    a->>etx: commitTx({id:0,txType:"lock", amount:100, kind:"CRC", from:s.address,to:market.address})
+
+    # buyer deposits NORI
+    b->>nt: deposit 100 NORI
+    nt->>a: notified of deposit
+
+    # buyer places bid in forward market
+    b->>a: places bid for 100 CRCs using 100 NORI
+    a->>etx:commitTx({id:1,txType:"lock", amount:100, kind:"NORI", from:b.address,to:market.address})
+
+    # forward market ends
+    a->>etx: get all commited transactions
+    etx->>etx: finds 100 CRCs for supplier, 100 NORI for buyer
+    etx->>ac:notified of end of auction
+    ac->>pk: submits bids and offers to smart contract
+    par
+      pk->>fwd: authorize({amount:100,kind"NORI",to:market.address,from:b.address})
+      pk->>fwd: authorize({amount:100,kind"CRC",to:market.address,from:s.address})
+    end
+    fwd->>fwd: matches bids and offers
+    fwd->>fwd: mark 100 NORI as avaialble to supplier
+    fwd->>fwd: mark 100 CRCs as avaialble to buyer
+    b->>a: signs contract
+    a->>pk:prepares tx
+    a->>etx: updateTx({id:0,status:"spending"})
+    a->>etx: updateTx({id:1,status:"spending"})
+    par
+      par
+        pk->>ac: swap({amount:100,kind"NORI",to:s.address,from:b.address})
+        pk->>ac: swap({amount:100,kind"CRC",to:b.address,from:s.address})
+      end
+      par
+        ac->>fwd: trigger
+        ac->>fwd: trigger
+      end
+      par
+        fwd->>pk: operatorSend({amount:100,kind"NORI",to:s.address,from:b.address})
+        pk->>pk: creates promise to wait for tx finalization
+        fwd->>pk: operatorSend({amount:100,kind"CRC",to:b.address,from:s.address})
+        pk->>pk: creates promise to wait for tx finalization
+      end
+    end
+    pk->>pk: promises resolve with finished txs
+    par
+      pk->>etx: updateTx({id:0,status:"spent"})
+      pk->>etx: updateTx({id:1,status:"spent"})
+    end
+
+    # buyer withdraws
+    b->>a: withdraw 100 CRCs
+    a->>pk: begin withdraw
+    pk->>crc: get balance
+    crc->>pk: balance is 100
+    pk->>etx: get commited balance
+    etx->>etx: balance = CRC balance - commited CRC tx balance
+    etx->>pk: CRC balance is 100
+    pk->>crc: withdraw 100 CRCs
+
+    # supplier withdraws
+    b->>a: withdraw 100 CRCs
+    a->>pk: begin withdraw
+    pk->>nt: get balance
+    nt->>pk: balance is 100
+    pk->>etx: get commited balance
+    etx->>etx: balance = NORI balance - commited NORI tx balance
+    etx->>pk: NORI balance is 100
+    pk->>crc: withdraw 100 NORI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
