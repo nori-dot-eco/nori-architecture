@@ -1,0 +1,34 @@
+sequenceDiagram
+# participant definitions
+Participant p as API Partner
+Participant apu as API Partner User
+Participant apa as API Partner App
+Participant n as Nori
+Participant napi as Nori Retirement API
+Participant nds as Nori Datastore
+Participant b as Blockchain
+
+# Nori admin creates auction
+p ->> n: Pre-purchases 100 NRTs
+n ->> nds: Allocates 100 retireable NRTs to API partners balance
+apu ->> apa: Elects to offset 1 tonne of CO2
+apa ->> napi: /retire?quantity=1&partner=1234&secret=abcd
+napi ->> nds: creates 1 certificate for 1 NRT
+nds ->> napi: returns receipt for NRT
+napi ->> apa: returns receipt for NRT
+apa ->> apu: sees receipt for NRT
+n ->> b: Nori manually retires NRT on the blockchain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
